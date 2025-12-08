@@ -31,5 +31,49 @@ This repository includes only the foundational theory papers. Domain-specific ap
 
 ## Conceptual Summary
 
+This repository is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+See the LICENSE file for details.
 SymC is based on the dimensionless damping ratio:
 
+χ = γ / (2|ω|)
+
+At the critical value **χ = 1**, systems reach:
+
+- maximal information efficiency  
+- coalescence of propagator poles  
+- fastest monotone relaxation  
+- the transition between underdamped and overdamped regimes  
+
+Stable adaptive behavior occurs within **0.8 ≤ χ ≤ 1.0**, while deviations lead to instability or rigidity.
+
+This structure appears across quantum dissipation, cosmology, inheritance systems, and adaptive control, arising from general linear stability principles.
+
+---
+
+## Purpose of This Repository
+
+- Consolidates all foundational SymC theory papers  
+- Maintains stable versioned PDF releases  
+- Hosts supplementary derivations and materials  
+- Provides a coherent base for domain-level SymC applications  
+
+---
+
+## Related Resources
+
+**Zenodo (all releases):** https://zenodo.org/communities/symc-universe/  
+**ResearchGate:** https://www.researchgate.net/profile/Nate-Christensen-2  
+
+---
+
+## License
+
+All works are free for academic use. Cite the DOI associated with each paper.
+
+---
+
+## Contact
+
+**Nate Christensen**  
+Independent Researcher  
+SymC Universe Project
