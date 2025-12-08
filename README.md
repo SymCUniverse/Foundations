@@ -30,33 +30,16 @@ SymC is built around the dimensionless damping ratio:
 
 χ = γ / (2|ω|)
 
-
-The critical value χ = 1 marks:
-
-a second-order exceptional point,
-
-peak information efficiency,
-
-fastest monotone relaxation,
-
-the transition between underdamping and overdamping.
+The critical value χ = 1 marks: a second-order exceptional point, peak information efficiency, fastest monotone relaxation, the transition between underdamping and overdamping.
 
 Systems with 0.8 ≤ χ ≤ 1.0 exhibit stable adaptive behavior.
 This same structure appears across quantum dissipation, cosmology, inheritance mechanisms, and complex adaptive systems.
-
 Any system linearizable near equilibrium inherits χ-structure by necessity, making SymC a candidate boundary constraint on physical theories.
 
 Purpose
 
 This repository provides:
-
-a consolidated location for all foundational SymC papers,
-
-version-stable PDF releases,
-
-supplementary mathematical derivations,
-
-a reference base for ongoing SymC research.
+a consolidated location for all foundational SymC papers, version-stable PDF releases, supplementary mathematical derivations, and a reference base for ongoing SymC research.
 
 Domain papers live in separate repositories.
 
