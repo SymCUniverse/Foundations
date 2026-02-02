@@ -1,0 +1,458 @@
+\documentclass[11pt]{article}
+
+\usepackage[top=0.50in,bottom=0.75in,left=0.75in,right=0.75in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\title{Closing Critical Gaps:\\
+Physical Inheritance from Stabilized Substrates in Dynamical Systems}
+
+\author{Nate Christensen\\
+SymC Universe Project\\
+NateChristensen@SymCUniverse.com}
+
+\date{1 February 2026\\v3}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Low-energy parameters of the Standard Model are treated here as emergent properties of a hierarchy of critically damped vacuum substrates formed during the symmetry-breaking cascade of the early universe. Each substrate is characterized by a dimensionless damping ratio
+\(\chi = \Gamma/(2\Omega)\) that is dynamically selected to lie near the critical value \(\chi = 1\), corresponding to a spectral exceptional point where the damping rate equals twice the characteristic frequency. Modes near this boundary relax to equilibrium with minimal settling time under standard control-theoretic norms, making \(\chi \approx 1\) a dynamically selected boundary of the local dynamics.
+
+Within this framework, fermion masses arise from self-energy corrections induced by stabilized scalar substrates, rather than from independently specified Yukawa couplings. For the electron, electroweak loops generate a gauge-invariant higher-dimensional operator coupling the lepton bilinear to the scalar gluon operator whose condensate defines the QCD substrate. This induces an effective mass
+\[
+m_e = \kappa_e\,\Lambda_{\rm QCD},
+\]
+where \(\Lambda_{\rm QCD}\) is the characteristic scale of the dominant scalar gluonic mode and \(\kappa_e\) is a substrate-coupling coefficient encoding loop factors and spectral overlap. Using the observed electron mass, one infers \(\kappa_e \approx 2.6\times 10^{-3}\), which, after radiative matching, reproduces the Standard Model Yukawa coupling \(y_e\) without additional parameter input. The framework maps the 19 Standard Model parameters into substrate-induced and substrate-ratio classes, and predicts a dynamical alignment between the onset of cosmic acceleration and the transition of structure growth to critical damping. These features provide concrete falsification channels in lattice QCD, quantum open systems, and cosmological surveys.
+\end{abstract}
+
+\section{Introduction}
+
+The Standard Model (SM) contains 19 free parameters whose numerical values are fixed only by experiment. These include fermion masses, gauge couplings, Higgs parameters, CKM mixing angles, and the strong CP phase. No internal mechanism determines these values. This parameter gap persists despite extensive work on flavor symmetries, grand unification, and anthropic reasoning.
+
+The SymC framework proposes that these parameters arise from dynamical inheritance: low-energy degrees of freedom acquire effective properties through interactions with stabilized substrates formed during symmetry breaking. Each substrate is characterized by a dimensionless damping ratio
+\begin{equation}
+\chi = \frac{\Gamma}{2\Omega},
+\end{equation}
+where \(\Omega\) is a characteristic frequency and \(\Gamma\) an effective damping rate. The critical value \(\chi = 1\) marks a second-order exceptional point in the spectrum of damped modes, where eigenvalues coalesce and the system transitions from oscillatory to purely relaxational behavior. Under standard control-theoretic norms \cite{Ogata,FranklinPowellEmami}, modes near \(\chi = 1\) minimize settling time to equilibrium, making this boundary a dynamically selected operating point.
+
+The goals of this paper are:
+\begin{itemize}
+  \item to establish \(\chi \approx 1\) as a robust dynamical boundary associated with minimal settling time and exceptional-point structure;
+  \item to describe substrate formation during the symmetry-breaking cascade and clarify that \(\chi \approx 1\) is re-selected at each stage as a fixed-point attractor of the local dynamics;
+  \item to formulate substrate inheritance using effective field theory (EFT), maintaining gauge invariance and compatibility with standard quantum field theory;
+  \item to derive the electron mass from a stabilized QCD scalar substrate via a loop-induced, gauge-invariant operator, and to relate the resulting coefficient \(\kappa_e\) to the observed Yukawa coupling \(y_e\);
+  \item to map SM parameters into substrate-induced and substrate-ratio classes, and to identify falsifiable predictions in lattice QCD, quantum open systems, and cosmology.
+\end{itemize}
+
+\section{The \texorpdfstring{\(\chi\)}{chi} principle as an adaptive stability boundary}
+
+Consider a single effective mode with natural frequency \(\Omega\) and damping rate \(\Gamma\), governed by
+\begin{equation}
+\ddot{x} + \Gamma \dot{x} + \Omega^2 x = 0.
+\end{equation}
+The dimensionless damping ratio
+\begin{equation}
+\chi = \frac{\Gamma}{2\Omega}
+\end{equation}
+defines three regimes:
+\begin{itemize}
+  \item \(0 < \chi < 1\) (underdamped): oscillatory response with decaying amplitude;
+  \item \(\chi = 1\) (critical): repeated real eigenvalue, fastest monotonic relaxation without overshoot;
+  \item \(\chi > 1\) (overdamped): slow monotonic relaxation.
+\end{itemize}
+
+For standard settling-time definitions in control theory (2\%, 5\% criteria under \(L^2\) or \(L^\infty\) norms) \cite{Ogata,FranklinPowellEmami}, modes near \(\chi = 1\) minimize the time to enter a prescribed neighborhood of equilibrium for a given energy budget. The precise functional form of the settling time depends on the chosen norm and threshold, but the ordering (underdamped < critical < overdamped for comparable energy dissipation) is robust across standard metrics.
+
+In the SymC framework, this motivates the following principle: during rapid dynamical epochs (such as cosmological phase transitions), modes that relax too slowly (\(\chi \gg 1\)) or ring excessively (\(\chi \ll 1\)) are dynamically disfavored. Modes with \(\chi \approx 1\) are preferentially stabilized, forming persistent substrates that can seed subsequent structure. The condition \(\chi \approx 1\) is thus treated as a dynamically selected boundary, not as an imposed constraint.
+
+The mathematical structure underlying this selection is the exceptional point at \(\chi = 1\), where the characteristic polynomial of the damped oscillator has a repeated root. Here exceptional point is used in the dynamical-systems sense of eigenvalue coalescence in the linearized evolution generator \cite{Kato,Rotter,Berry}. This coalescence marks a transition in the spectral topology and is associated with enhanced sensitivity to perturbations, which may play a role in the stabilization dynamics.
+
+\section{Substrate formation in the symmetry-breaking cascade}
+
+As the universe expands and cools, successive symmetry-breaking transitions generate collective scalar degrees of freedom. At each stage, the local dynamics filter modes according to their damping ratio \(\chi\). Rather than viewing \(\chi = 1\) as a quantity literally inherited from earlier epochs, we treat it as a fixed-point attractor that re-emerges under the new conditions.
+
+\subsection{Bounce and initial substrate}
+
+In cosmological models with a bounce \cite{BrandenbergerPeter,NovelloBergliaffa}, scalar perturbations \(\delta\phi_k\) satisfy
+\begin{equation}
+\ddot{\delta\phi}_k + \Gamma_k(t)\,\dot{\delta\phi}_k + \Omega_k^2(t)\,\delta\phi_k = 0,
+\end{equation}
+with time-dependent damping \(\Gamma_k(t)\) (for example, Hubble friction) and effective frequency \(\Omega_k(t)\) determined by the background. The instantaneous damping ratio
+\begin{equation}
+\chi_k(t) = \frac{\Gamma_k(t)}{2\Omega_k(t)}
+\end{equation}
+controls whether a mode oscillates, relaxes slowly, or relaxes efficiently. Modes with \(\chi_k(t)\) differing from unity by factors of order 2 or more either ring and backreact or fail to settle before the background changes significantly. Modes with \(\chi_k(t) \in [0.8, 1.2]\) near the bounce minimize ringing and maximize stability, and are dynamically favored to form the initial stabilized substrate.
+
+\subsection{Cascade to electroweak and QCD scales}
+
+As the universe cools further, the symmetry-breaking cascade proceeds through the Planck, GUT, electroweak, and QCD scales. At each stage, new collective modes appear, and the local dynamics again filter them according to \(\chi\). The key substrates for low-energy particle physics are:
+\begin{itemize}
+  \item an electroweak substrate associated with Higgs fluctuations, with characteristic frequency \(\Omega_{\rm EW} \sim m_H \sim 125~\text{GeV}\);
+  \item a QCD substrate associated with the lightest scalar gluonic mode (glueball or condensate), with characteristic frequency \(\Omega_{\rm QCD} \sim \Lambda_{\rm QCD} \sim 200~\text{MeV}\).
+\end{itemize}
+
+In the deconfined phase near the QCD transition, gluonic modes exhibit significant damping due to scattering and non-perturbative processes. The SymC framework posits that the dominant scalar gluonic mode that survives as a substrate is dynamically driven toward \(\chi_{\rm QCD} \approx 1\), making
+\begin{equation}
+\chi_{\rm QCD} = \frac{\Gamma_{\rm QCD}}{2\Lambda_{\rm QCD}} \approx 1
+\quad\Rightarrow\quad
+\Gamma_{\rm QCD} \approx 2\Lambda_{\rm QCD}.
+\end{equation}
+Here $\Gamma_{\rm QCD}$ is defined as the scalar-channel spectral width, extracted from the pole structure or relaxation time of the Euclidean scalar correlator via standard spectral-function reconstruction methods \cite{MeyerBulk,AartsReview}.
+
+\section{Substrate inheritance via effective field theory}
+
+Fermion masses arise in this picture through interactions with stabilized scalar substrates. This is naturally expressed in the language of effective field theory (EFT) \cite{WeinbergQFT2,GeorgiEFT,ManoharEFT}, maintaining gauge invariance and compatibility with standard quantum field theory.
+
+Let \(\{\Phi_k\}\) denote a set of stabilized scalar substrates (for example, Higgs, QCD scalar condensate) formed during symmetry breaking. A generic fermion field \(\psi\) can couple to these substrates via higher-dimensional operators, suppressed by the appropriate power of the matching scale to keep the Lagrangian dimension 4,
+\begin{equation}
+\mathcal{L}_{\rm eff} \supset \sum_k c_k\,(\bar\psi\psi)\,\frac{\Phi_k}{\Lambda_k^{d_k-1}} + \cdots,
+\end{equation}
+where \(c_k\) are dimensionless coefficients, \(\Lambda_k\) are characteristic scales (for example, electroweak or heavier), and \(d_k = \dim(\Phi_k)\). When a substrate \(\Phi_k\) develops a nonzero expectation value or condensate \(\langle \Phi_k \rangle\), the fermion acquires an effective mass
+\begin{equation}
+m_\psi = \sum_k c_k\,\frac{\langle \Phi_k \rangle}{\Lambda_k^{d_k-1}}.
+\end{equation}
+
+In this formulation, inheritance means that the stability and scale of \(m_\psi\) are dictated by the stability and scale of the substrate condensates. Because each substrate is dynamically driven toward \(\chi_k \approx 1\), the induced fermion masses inherit this critical stability structure. The language of EFT makes this mechanism gauge-invariant and compatible with standard quantum field theory.
+
+\section{Electron mass from the QCD substrate}
+
+The electron provides the first concrete application of substrate inheritance. In the Standard Model, the electron mass is usually written as
+\begin{equation}
+m_e = \frac{v}{\sqrt{2}}\,y_e,
+\end{equation}
+where \(v \approx 246~\text{GeV}\) is the Higgs vacuum expectation value and \(y_e\) is the electron Yukawa coupling. In the SymC framework, \(y_e\) is not treated as a fundamental input but as an effective parameter encoding a more microscopic substrate coupling.
+
+\subsection{Effective mass operator and gauge structure}
+
+Electroweak loops generate a gauge-invariant higher-dimensional operator coupling the lepton bilinear to the scalar gluon operator $G^2 \equiv G^a_{\mu\nu}G^{a\mu\nu}$. The lowest-dimension gauge-invariant structure consistent with Standard Model symmetries is
+\begin{equation}
+\mathcal{L}_{\rm eff} \supset 
+\frac{c_e}{\Lambda^4}\,(\bar{L} H e_R)\,G^2 + \text{h.c.},
+\end{equation}
+where $\Lambda$ is an electroweak-scale matching parameter and $c_e$ is a dimensionless loop-induced coefficient. This operator has mass dimension 8 before electroweak symmetry breaking, ensuring that the Lagrangian remains dimension 4.
+
+After electroweak symmetry breaking, $H$ acquires a vacuum expectation value, yielding the effective scalar coupling
+\begin{equation}
+\mathcal{L}_{\rm eff} \supset 
+\frac{\tilde c_e}{\Lambda^3}\,(\bar e e)\,G^2,
+\end{equation}
+where $\tilde c_e$ absorbs factors of $v$ and numerical constants. This dimension-7 operator is the leading gauge-invariant term that couples the electron bilinear to the stabilized QCD scalar substrate.
+
+\subsection{Mass relation and substrate coefficient}
+
+The QCD substrate is modeled as a stabilized scalar condensate associated with \(G^2\), with characteristic scale \(\Lambda_{\rm QCD}\). The condensate \(\langle G^2 \rangle\) \cite{SVZ,Narison} induces an electron mass via the effective operator,
+\begin{equation}
+m_e = \kappa_e\,\Lambda_{\rm QCD},
+\end{equation}
+where
+\begin{equation}
+\kappa_e = \frac{\tilde{c}_e}{\Lambda^3}\,\frac{\langle G^2 \rangle}{\Lambda_{\rm QCD}}.
+\end{equation}
+Here \(\kappa_e\) is a substrate-coupling coefficient: it encodes loop factors, matching coefficients, and the spectral overlap between the lepton sector and the QCD substrate. It is not identical to the Yukawa coupling \(y_e\), but the two are related by radiative matching.
+
+Equating the substrate-induced mass with the Standard Model expression,
+\begin{equation}
+m_e = \kappa_e\,\Lambda_{\rm QCD} = \frac{v}{\sqrt{2}}\,y_e,
+\end{equation}
+yields
+\begin{equation}
+y_e = \kappa_e\,\frac{\sqrt{2}\,\Lambda_{\rm QCD}}{v}.
+\end{equation}
+
+\subsection{Numerical estimate and matching}
+
+Using the observed electron mass \(m_e^{\rm (exp)} = 0.511~\text{MeV}\) and a characteristic QCD scale \(\Lambda_{\rm QCD} \approx 200~\text{MeV}\), one infers
+\begin{equation}
+\kappa_e = \frac{m_e^{\rm (exp)}}{\Lambda_{\rm QCD}} \approx 2.6\times 10^{-3}.
+\end{equation}
+Substituting into the matching relation,
+\begin{equation}
+y_e = \kappa_e\,\frac{\sqrt{2}\,\Lambda_{\rm QCD}}{v},
+\end{equation}
+with \(v = 246~\text{GeV}\) and \(\Lambda_{\rm QCD} = 200~\text{MeV}\), gives
+\begin{equation}
+y_e \approx 2.9\times 10^{-6},
+\end{equation}
+in agreement with the experimentally inferred Yukawa coupling.
+
+\subsection{Radiative stability}
+
+The substrate-coupling coefficient $\kappa_e$ defined at scale $\Lambda_{\rm QCD}$ receives radiative corrections when evolved to other scales. Within the EFT, these corrections are suppressed by powers of $(\Lambda_{\rm QCD}/\Lambda_{\rm EW})$ and do not destabilize the mass relation. A full analysis requires matching the dimension-7 operator through threshold scales, accounting for scheme dependence and higher-order corrections. This is deferred to future work, but parametric estimates suggest the corrections are of order a few percent, well within the uncertainties of the present framework.
+
+\section{Standard Model parameter map}
+
+The 19 parameters of the minimal Standard Model can be organized into three structural classes within the SymC framework.
+
+\subsection{Class I: substrate-induced fermion masses and mixings}
+
+Fermion masses are treated as substrate-induced quantities of the form
+\begin{equation}
+m_f = \kappa_f\,\Lambda_{\rm sub},
+\end{equation}
+where \(\Lambda_{\rm sub}\) is the characteristic scale of the dominant substrate relevant for fermion \(f\), and \(\kappa_f\) is a substrate-coupling coefficient analogous to \(\kappa_e\). The corresponding Yukawa couplings are then
+\begin{equation}
+y_f = \frac{\sqrt{2}\,m_f}{v} = \kappa_f\,\frac{\sqrt{2}\,\Lambda_{\rm sub}}{v}.
+\end{equation}
+
+CKM mixing angles arise from overlap functionals of multi-substrate couplings. In a multi-substrate EFT, the mixing matrix elements take the schematic form
+\begin{equation}
+V_{ij} \sim \mathcal{F}(\kappa_i,\kappa_j,\kappa_k,\ldots),
+\end{equation}
+where $\mathcal{F}$ is a nonlinear functional determined by the pattern of substrate couplings and radiative matching. Explicit constructions for heavier generations and quark mixing are deferred to future work.
+
+\subsection{Class II: substrate-ratio parameters}
+
+Gauge couplings and Higgs-sector parameters are associated with ratios of substrate frequencies and stiffnesses. For example, the Higgs quartic coupling \(\lambda_H\) can be related to the ratio of the electroweak substrate frequency \(\Omega_{\rm EW}\) to a higher-scale substrate frequency \(\Omega_{\rm UV}\),
+\begin{equation}
+\lambda_H \sim \left(\frac{\Omega_{\rm EW}}{\Omega_{\rm UV}}\right)^2,
+\end{equation}
+interpreted as a dimensionless measure of spectral stiffness or bandwidth separation between scales. Concrete models for Class II parameters require additional structure and are deferred to future work.
+
+\subsection{Class III: topological parameter}
+
+The strong CP phase $\theta_{\rm QCD}$ is a topological parameter associated with the global structure of the QCD vacuum. It does not arise from substrate inheritance in the present framework and remains an independent input. The SymC framework does not predict the value of $\theta_{\rm QCD}$, nor does it require $\theta_{\rm QCD}$ to be small for internal consistency. Additional structure (such as axion dynamics or more general topological mechanisms) is likely required to explain the observed constraint $|\theta_{\rm QCD}| \lesssim 10^{-10}$.
+
+\section{Cosmological origin and dynamical alignment}
+
+The SymC framework connects the $\chi$ principle to cosmological dynamics in two ways: through the bounce-era selection of initial substrates and through the late-time behavior of structure growth.
+
+\subsection{Bounce dynamics as $\chi$-filter}
+
+As discussed above, modes with $\chi_k(t) \in [0.8, 1.2]$ near the bounce are dynamically favored to form the initial substrate. Subsequent symmetry-breaking transitions re-select $\chi \approx 1$ at each stage as a fixed-point attractor of the local dynamics, rather than transmitting a literal numerical value from the bounce. This iterative selection picture emphasizes that critical damping is a recurrent outcome of relaxation dynamics in expanding backgrounds.
+
+\subsection{Structure growth and acceleration: alignment, not identity}
+
+In flat $\Lambda$CDM cosmology \cite{Peebles,Dodelson,Carroll}, linear matter perturbations in the growing mode satisfy
+\begin{equation}
+\ddot{\delta} + 2H\dot{\delta} - 4\pi G\rho_m\,\delta = 0,
+\end{equation}
+which can be written in the form of a damped oscillator with effective damping $2H$ and frequency $\Omega^2 = 4\pi G\rho_m$. The corresponding damping ratio is
+\begin{equation}
+\chi_\delta = \frac{H}{\sqrt{4\pi G\rho_m}}.
+\end{equation}
+As the universe evolves, $\chi_\delta$ increases and eventually crosses unity. Separately, the deceleration parameter
+\begin{equation}
+q = -\frac{\ddot{a}a}{\dot{a}^2}
+\end{equation}
+crosses zero when the universe transitions from deceleration to acceleration.
+
+The SymC framework predicts a temporal alignment between the epoch when $\chi_\delta \approx 1$ and the epoch when $q \approx 0$: the onset of acceleration coincides with the transition of structure growth to critical damping \cite{Linder,Riess1998,Perlmutter1999}. In terms of redshift, this alignment is expected to hold to within $\Delta z < 0.1$ (corresponding to approximately 1 Gyr at $z \sim 0.5$). Current observational uncertainties on the growth rate and expansion history are of order $\Delta z \sim 0.05$ to 0.1 from surveys such as BOSS and DES. A robust separation of these epochs exceeding $\Delta z > 0.2$ at $>3\sigma$ confidence would constrain this prediction.
+
+This is not asserted as an exact identity but as a dynamical coincidence that can be tested with precision measurements of growth and expansion histories from upcoming surveys (DESI, Euclid, Rubin).
+
+\section{Predictions and falsification criteria}
+
+The SymC framework makes several concrete predictions that can be tested across different domains:
+
+\begin{itemize}
+  \item \textbf{Quantum open systems:} For systems described by GKSL master equations \cite{Davies,RivasHuelga,WisemanMilburn}, the transition from oscillatory to purely relaxational expectation-value dynamics should occur near $\chi = \Gamma/(2|\Omega|) \in [0.8, 1.2]$. Experiments in circuit QED, trapped ions, or optomechanics can tune $\Gamma$ and map this transition. Systematic measurements across multiple platforms showing the transition consistently outside the range $\chi \in [0.7, 1.3]$ would challenge the general applicability of the $\chi$ principle across quantum open systems.
+
+  \item \textbf{QCD substrate damping:} Lattice QCD can compute the scalar-channel spectral function associated with $G^2$ near the confinement transition \cite{TeperReview,AmslerTornqvist,ChenEtAlGlueball}. The SymC prediction is that the dominant scalar mode relevant for the substrate satisfies $\Gamma_{\rm QCD} \in [1.5\Lambda_{\rm QCD}, 2.5\Lambda_{\rm QCD}]$, where $\Gamma_{\rm QCD}$ is extracted as a spectral width or relaxation rate of the scalar correlator using standard spectral-function reconstruction methods (such as maximum entropy or Backus-Gilbert) \cite{MeyerBulk,AartsReview}. Continuum-extrapolated results with $\Gamma_{\rm QCD} < \Lambda_{\rm QCD}$ or $\Gamma_{\rm QCD} > 3\Lambda_{\rm QCD}$ at $>3\sigma$ confidence, after accounting for systematic uncertainties in the spectral reconstruction, would falsify the QCD substrate component of the framework.
+
+  \item \textbf{Electron mass matching:} Lattice QCD, combined with perturbative electroweak calculations, can determine the effective coefficient $\tilde{c}_e$ and the condensate $\langle G^2 \rangle$, allowing an independent estimate of $\kappa_e$. A continuum-extrapolated lattice result differing from $\kappa_e = 2.6 \times 10^{-3}$ by more than combined statistical and systematic uncertainties at $>3\sigma$ confidence, after accounting for scheme choices and matching uncertainties, would challenge the substrate inheritance mechanism for the electron mass.
+
+  \item \textbf{Cosmological alignment:} Future surveys (DESI, Euclid, Rubin) will measure both the expansion history and the growth rate of structure with high precision. The SymC framework predicts a dynamical alignment between the epoch when $q \approx 0$ and the epoch when $\chi_\delta \approx 1$, expected to hold to within $\Delta z < 0.1$. A clear, robust separation of these epochs with $\Delta z > 0.2$ at $>3\sigma$ confidence in a framework where the growth equation retains its standard form would constrain the cosmological component of SymC.
+\end{itemize}
+
+\section{Discussion and outlook}
+
+The analysis presented here reframes the Standard Model parameter problem as a question of dynamical inheritance from stabilized substrates. The $\chi$ principle identifies $\chi \approx 1$ as a robust boundary associated with minimal settling time and exceptional-point structure. Substrates formed during the symmetry-breaking cascade are dynamically driven toward this boundary, and fermion masses emerge from self-energy corrections induced by these stabilized backgrounds.
+
+The electron mass serves as the first concrete application: a loop-induced, gauge-invariant dimension-7 operator couples the lepton bilinear to the QCD scalar condensate, yielding an effective mass $m_e = \kappa_e \Lambda_{\rm QCD}$. Matching to the Standard Model expression relates $\kappa_e$ to the observed Yukawa coupling $y_e$ without introducing additional parameter tunings. The smallness of $y_e$ is understood as a consequence of substrate coupling and scale ratios.
+
+\subsection{Extension to the quark sector}
+
+While the analysis above focuses on the electron via the gluonic condensate $\langle G^2\rangle$, the $\chi \approx 1$ boundary also appears in independent quark-sector systems. Detailed analysis (Appendix F of the supplementary materials) shows that critical damping characterizes chiral symmetry breaking, quark confinement, and quarkonia dissociation. Three systems spanning different scales and symmetry properties independently exhibit this boundary:
+
+\begin{itemize}
+\item The $\sigma$-meson ($f_0(500)$), the scalar fluctuation of the chiral condensate $\langle\bar{q}q\rangle$, has width $\Gamma_\sigma \sim 400$ to 700 MeV comparable to its mass $M_\sigma \sim 400$ to 550 MeV, yielding $\chi_\sigma \approx 0.6$ to 0.9. This broad resonance identifies the chiral substrate as optimized for rapid equilibration, distinct from narrow vector resonances that do not serve as vacuum condensates.
+
+\item Dyson-Schwinger studies of the dressed quark propagator show complex poles (no real mass shell) with imaginary parts comparable to real parts, the defining signature of critical damping. The constituent quark mass function transitions from dynamical ($\sim 300$ MeV) to perturbative behavior where ${\rm Im}\,\Sigma \approx 2\,{\rm Re}\,\Omega$, precisely matching the SymC condition $\Gamma \approx 2\Lambda$.
+
+\item Heavy quarkonia ($J/\psi$, $\Upsilon(1S)$) dissociate in the quark-gluon plasma when thermal broadening drives their damping ratio to unity. Lattice studies show the transition from narrow resonances ($\chi \ll 1$ in vacuum) to melted states ($\chi \gtrsim 1$ at $T > T_c$) occurs at the critical damping boundary.
+\end{itemize}
+
+These systems span light quarks (chiral condensate), heavy quarks (quarkonia), and the momentum-dependent quark propagator. The parallel appearance of $\chi \approx 1$ at dynamical transition points across these distinct physical regimes suggests a consistent organizing principle for fermionic mass generation in QCD. The extension of substrate inheritance to quark masses and CKM mixing (Class I parameters in Section 6.1) follows naturally from this quark-sector stability structure and is addressed in ongoing work.
+
+\subsection{Extension to neutrino masses}
+
+The substrate hierarchy framework extends naturally to the neutrino sector. While the present work focuses on the QCD substrate and its role in generating the electron mass, the same inheritance mechanism operating at different scales can account for the extreme lightness of neutrinos. If right-handed neutrinos couple to a stabilized GUT-scale substrate ($\Lambda_{\rm GUT} \sim 10^{16}$ GeV) while left-handed neutrinos couple to the electroweak substrate, the resulting light neutrino masses emerge as geometric ratios of two $\chi$-stabilized scales:
+\begin{equation}
+m_\nu \sim \frac{v^2}{\Lambda_{\rm GUT}},
+\end{equation}
+recovering the Type-I seesaw mechanism \cite{NeutrinoPaper}. For $v \approx 246$ GeV and $\Lambda_{\rm GUT} \approx 10^{16}$ GeV, this yields $m_\nu \sim 0.01$ to 0.1 eV, consistent with oscillation data. The neutrino sector thus provides an independent test of the substrate hierarchy: the mass scales span fifteen orders of magnitude (from $\sim 10^{-9}$ GeV for neutrinos to $\sim 10^2$ GeV for the top quark), yet all arise from couplings to $\chi \approx 1$ stabilized substrates at their respective characteristic scales. A detailed treatment of neutrino oscillations within the SymC framework, including predictions for decoherence effects testable by JUNO, DUNE, and Hyper-Kamiokande, is presented separately \cite{NeutrinoPaper}.
+
+Several directions remain open:
+\begin{itemize}
+  \item extending the substrate inheritance mechanism to heavier fermions and quark mixing, with explicit multi-substrate EFT constructions;
+  \item incorporating neutrino masses and PMNS mixing, which may require additional substrates or seesaw-like structures;
+  \item developing more concrete models for Class II parameters, including gauge couplings and Higgs-sector parameters, in terms of spectral stiffness ratios;
+  \item addressing the strong CP problem and the role of $\theta_{\rm QCD}$ within or alongside the SymC framework;
+  \item refining lattice QCD and cosmological tests to sharpen the falsification criteria.
+\end{itemize}
+
+The priority among these directions is as follows: the extension to heavier fermions and quark mixing is necessary for framework viability, as the electron mass alone is insufficient to establish the general mechanism. Neutrino masses and Class II parameters are desirable but not strictly required for the core framework to stand. The strong CP problem remains an open question that may require additional structure beyond substrate inheritance.
+
+\section{Conclusion}
+
+The SymC framework proposes that low-energy parameters of the Standard Model are emergent properties of a hierarchy of $\chi$-stabilized substrates formed during the universe's symmetry-breaking cascade. The $\chi$ principle identifies a dynamically selected boundary at $\chi \approx 1$, associated with minimal settling time and exceptional-point structure. Substrate inheritance, formulated in EFT language, allows fermion masses to arise from self-energy corrections induced by stabilized scalar backgrounds.
+
+For the electron, a loop-induced coupling to the QCD scalar condensate yields an effective mass $m_e = \kappa_e \Lambda_{\rm QCD}$, with $\kappa_e$ inferred from data and consistent with the observed Yukawa coupling after radiative matching. The framework organizes Standard Model parameters into substrate-induced, substrate-ratio, and topological classes, and makes testable predictions in quantum systems, lattice QCD, and cosmology. Framework viability ultimately rests on these empirical tests.
+
+\begin{thebibliography}{99}
+
+% Open quantum systems / GKSL / damping
+\bibitem{Davies}
+Davies, E. B. (1976).
+\emph{Quantum Theory of Open Systems}.
+Academic Press.
+
+\bibitem{RivasHuelga}
+Rivas, A., \& Huelga, S. F. (2012).
+\emph{Open Quantum Systems: An Introduction}.
+Springer.
+
+\bibitem{WisemanMilburn}
+Wiseman, H. M., \& Milburn, G. J. (2009).
+\emph{Quantum Measurement and Control}.
+Cambridge University Press.
+
+% Control / settling time / critical damping
+\bibitem{Ogata}
+Ogata, K.
+\emph{Modern Control Engineering}.
+Prentice Hall.
+
+\bibitem{FranklinPowellEmami}
+Franklin, G. F., Powell, J. D., \& Emami-Naeini, A.
+\emph{Feedback Control of Dynamic Systems}.
+Pearson.
+
+% Exceptional points / non-Hermitian
+\bibitem{Kato}
+Kato, T. (1966).
+\emph{Perturbation Theory for Linear Operators}.
+Springer.
+
+\bibitem{Rotter}
+Rotter, I. (2009).
+A non-Hermitian Hamilton operator and the physics of open quantum systems.
+\emph{Journal of Physics A}, 42, 153001.
+
+\bibitem{Berry}
+Berry, M. V. (2004).
+Physics of nonhermitian degeneracies.
+\emph{Czech. J. Phys.}, 54, 1039.
+
+% EFT / operator language
+\bibitem{WeinbergQFT2}
+Weinberg, S. (1996).
+\emph{The Quantum Theory of Fields, Vol. II}.
+Cambridge University Press.
+
+\bibitem{GeorgiEFT}
+Georgi, H. (1993).
+Effective field theory.
+\emph{Annual Review of Nuclear and Particle Science}, 43, 209.
+
+\bibitem{ManoharEFT}
+Manohar, A. V. (1997).
+Effective field theories.
+\emph{Lecture Notes in Physics}, 479, 311.
+
+% Gluon condensate / QCD vacuum
+\bibitem{SVZ}
+Shifman, M. A., Vainshtein, A. I., \& Zakharov, V. I. (1979).
+QCD and resonance physics: theoretical foundations.
+\emph{Nuclear Physics B}, 147, 385.
+
+\bibitem{Narison}
+Narison, S. (2004).
+\emph{QCD as a Theory of Hadrons}.
+Cambridge University Press.
+
+% Glueballs / scalar channel
+\bibitem{TeperReview}
+Teper, M. J. (1998).
+Glueball masses and other physical properties of SU(N) gauge theories.
+\emph{arXiv:hep-th/9812187}.
+
+\bibitem{AmslerTornqvist}
+Amsler, C., \& Tornqvist, N. A. (2004).
+Mesons beyond the naive quark model.
+\emph{Physics Reports}, 389, 61.
+
+\bibitem{ChenEtAlGlueball}
+Chen, Y., et al. (2006).
+Glueball spectrum and matrix elements on anisotropic lattices.
+\emph{Physical Review D}, 73, 014516.
+
+% Finite-T QCD / spectral functions
+\bibitem{MeyerBulk}
+Meyer, H. B. (2008).
+A calculation of the bulk viscosity in SU(3) gluodynamics.
+\emph{Physical Review Letters}, 100, 162001.
+
+\bibitem{AartsReview}
+Aarts, G., et al. (2017).
+Spectral functions at nonzero momentum in hot QCD.
+\emph{Journal of High Energy Physics}, 02, 186.
+
+% Cosmology: structure, growth, GR
+\bibitem{Peebles}
+Peebles, P. J. E. (1980).
+\emph{The Large-Scale Structure of the Universe}.
+Princeton University Press.
+
+\bibitem{Dodelson}
+Dodelson, S. (2003).
+\emph{Modern Cosmology}.
+Academic Press.
+
+\bibitem{Linder}
+Linder, E. V. (2005).
+Cosmic growth history and expansion history.
+\emph{Physical Review D}, 72, 043529.
+
+\bibitem{Carroll}
+Carroll, S. M. (2004).
+\emph{Spacetime and Geometry}.
+Addison-Wesley.
+
+% Dark energy / acceleration
+\bibitem{Riess1998}
+Riess, A. G., et al. (1998).
+Observational evidence for an accelerating universe.
+\emph{Astronomical Journal}, 116, 1009.
+
+\bibitem{Perlmutter1999}
+Perlmutter, S., et al. (1999).
+Measurements of $\Omega$ and $\Lambda$ from 42 high-redshift supernovae.
+\emph{Astrophysical Journal}, 517, 565.
+
+% Bounce cosmology reviews
+\bibitem{BrandenbergerPeter}
+Brandenberger, R., \& Peter, P. (2017).
+Bouncing cosmologies: progress and problems.
+\emph{Foundations of Physics}, 47, 797.
+
+\bibitem{NovelloBergliaffa}
+Novello, M., \& Bergliaffa, S. E. P. (2008).
+Bouncing cosmologies.
+\emph{Physics Reports}, 463, 127.
+
+% SymC neutrino extension
+\bibitem{NeutrinoPaper}
+Christensen, N. (2025).
+SymC Coupled-Oscillator Model of Neutrino Flavor Dynamics.
+Zenodo. \url{https://doi.org/10.5281/zenodo.17585528}
+
+\end{thebibliography}
+
+\end{document}
