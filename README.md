@@ -14,7 +14,7 @@ This repository includes only the foundational theory papers. Domain-specific ap
 |-------|-------------|-----|
 | **SymC Postulate (v3)** | Defines the universal χ = 1 boundary and exceptional-point structure. | [PDF](./SymC_Posv3.pdf) |
 | **SymC Noughts** | Introduces substrate noughts as carriers of inherited structure. | [PDF](./SymC_Noughts.pdf) |
-| **Closing Gaps with SymC (v2)** | Formalizes substrate inheritance and hierarchical stability. | [PDF](./SymC_ClosedGapsv2.pdf) / [Supps](./SymC_ClosedGapsv2supmats.pdf) |
+| **Closing Critical Gaps (v)*** | Formalizes substrate inheritance and hierarchical stability. | [PDF](./SymC_Gapsv3.pdf) / [Supps](./SymC_Supmats.pdf) |
 | **SymC AIF** | Connects SymC structure to predictive processing and active inference. | [PDF](./SymC_AIFv3.pdf) |
 
 ---
