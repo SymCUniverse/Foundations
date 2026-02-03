@@ -25,7 +25,7 @@ This repository includes only the foundational theory papers. Domain-specific ap
 |-------|-------------|-----|
 | **SymC Lindblad (v4)** | Exceptional points, open quantum systems, and critical damping geometry. | [PDF](./SymC_Lindbladv4.pdf) / [Supps](./SymC_Lindbladv4_Supps.pdf) |
 | **SymC and the QFT (v2)** | χ-structure in quantum field relaxation and boundary layers. | [PDF](./SymC_QFTv2.pdf) |
-| **SymC Neutrinos** | Damping-ratio reinterpretation of neutrino flavor oscillations. | [PDF](./SymC_Neutrinos.pdf) |
+| **SymC Neutrinos** | Matter-induced dephasing effects in neutrino flavor oscillations with exact vacuum unitarity. | [PDF](./SymC_Neutrinosv2.pdf) |
 
 ---
 
