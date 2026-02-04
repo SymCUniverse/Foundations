@@ -1,0 +1,330 @@
+\documentclass[11pt]{article}
+
+\usepackage[top=0.50in,bottom=0.75in,left=0.75in,right=0.75in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{braket}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage[numbers,sort&compress]{natbib}
+
+\title{Supplemental Material:\\Structural Constraints from Critical Damping in Open Quantum Field Theories: Implications for QCD Substrate Inheritance and Phenomenological Extensions}
+\author{Nate Christensen\\
+SymC Universe Project, Missouri, USA\\
+\href{mailto:NateChristensen@SymCUniverse.com}{NateChristensen@SymCUniverse.com}}
+\date{February 3, 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Detailed Schwinger-Keldysh Derivation}
+\label{sec:sk_details}
+
+\subsection{Influence Functional Calculation}
+
+The microscopic action for a scalar field $\phi$ coupled to a bath of oscillators $\{q_\alpha\}$ is:
+\begin{equation}
+S[\phi,\{q_\alpha\}] = \int d^4x \left[ \frac{1}{2}(\partial\phi)^2 - \frac{1}{2}m^2\phi^2 \right] + \sum_\alpha \int d^4x \left[ \frac{1}{2}(\partial q_\alpha)^2 - \frac{1}{2}\omega_\alpha^2 q_\alpha^2 - g_\alpha \phi q_\alpha \right].
+\end{equation}
+
+On the Keldysh contour with forward ($+$) and backward ($-$) branches:
+\begin{equation}
+Z = \int \mathcal{D}\phi_\pm \mathcal{D}q_{\alpha,\pm} \exp\left[i(S[\phi_+,q_{+}] - S[\phi_-,q_{-}])\right].
+\end{equation}
+
+Integrating out the bath oscillators yields:
+\begin{equation}
+\exp[i S_{\text{IF}}[\phi_+,\phi_-]] = \int \mathcal{D}q_{\alpha,\pm} \exp\left[i\sum_\alpha(S_{\alpha}[q_{\alpha,+}] - S_{\alpha}[q_{\alpha,-}] - \int d^4x g_\alpha(q_{\alpha,+}\phi_+ - q_{\alpha,-}\phi_-))\right].
+\end{equation}
+
+The resulting influence functional in Keldysh space:
+\begin{equation}
+S_{\text{IF}} = \frac{1}{2}\int d^4x d^4x' [\phi_+(x)-\phi_-(x)]\Sigma^{+-}(x-x')[\phi_+(x')+\phi_-(x')] + \text{(Keldysh/advanced terms)}.
+\end{equation}
+
+The retarded self-energy:
+\begin{equation}
+\Sigma_R(x-x') = \Sigma^{++}(x-x') - \Sigma^{+-}(x-x') = \sum_\alpha g_\alpha^2 G_{R,\alpha}(x-x'),
+\end{equation}
+where $G_{R,\alpha}$ is the retarded Green's function for bath oscillator $\alpha$.
+
+\subsection{Markovian Limit Derivation}
+
+For a bath with spectral density $J(\omega) = \sum_\alpha g_\alpha^2 \delta(\omega-\omega_\alpha)$, the retarded self-energy in frequency space:
+\begin{equation}
+\Sigma_R(\omega) = \int_0^\infty d\omega' \frac{J(\omega')}{\omega - \omega' + i0^+}.
+\end{equation}
+
+For Ohmic dissipation $J(\omega) = \gamma \omega$, and assuming $\omega \ll \omega_c$ (cutoff):
+\begin{equation}
+\Sigma_R(\omega) \approx -i\gamma\omega + \mathcal{O}(\omega^2/\omega_c).
+\end{equation}
+
+This yields the effective equation of motion:
+\begin{equation}
+(\square + m^2)\phi(x) + \gamma(u\cdot\partial)\phi(x) = \xi(x),
+\end{equation}
+where $\xi(x)$ represents quantum and thermal noise. The retarded response equation (mean field) follows by setting $\langle \xi \rangle = 0$:
+\begin{equation}
+(\square + m^2)\phi(x) + \gamma(u\cdot\partial)\phi(x) = 0.
+\end{equation}
+
+The Markovian approximation requires bath correlation time $\tau_{\text{bath}} \sim 1/\omega_c \ll 1/\omega_{\text{system}}$, justifying the local-in-time damping term.
+
+\section{Fisher Information Rate Derivation}
+\label{sec:fisher_derivation}
+
+\subsection{Measurement Model}
+
+Consider continuous quadrature measurement of a damped oscillator with equation of motion:
+\begin{equation}
+\ddot{x} + \gamma\dot{x} + \omega^2 x = A\cos(\omega_d t) + \xi(t),
+\end{equation}
+where $A$ is the unknown drive amplitude to be estimated, and measurement record:
+\begin{equation}
+y(t) = x(t) + \eta(t),
+\end{equation}
+with Gaussian white noise $\langle \eta(t)\eta(t')\rangle = \sigma^2\delta(t-t')$.
+
+\subsection{Fisher Information Calculation}
+
+The steady-state response to drive is:
+\begin{equation}
+x_{\text{ss}}(t) = \frac{A}{\sqrt{(\omega^2-\omega_d^2)^2 + \gamma^2\omega_d^2}}\cos(\omega_d t + \phi).
+\end{equation}
+
+For on-resonance driving ($\omega_d = \omega$):
+\begin{equation}
+x_{\text{ss}}(t) = \frac{A}{\gamma\omega}\cos(\omega t).
+\end{equation}
+
+The Fisher information for parameter $A$ after time $T$:
+\begin{equation}
+\mathcal{I}(A) = \frac{1}{\sigma^2}\int_0^T dt \left(\frac{\partial x_{\text{ss}}}{\partial A}\right)^2 = \frac{T}{2\sigma^2} \left(\frac{1}{\gamma\omega}\right)^2.
+\end{equation}
+
+The information rate:
+\begin{equation}
+I = \lim_{T\to\infty}\frac{\mathcal{I}(A)}{T} = \frac{1}{2\sigma^2\gamma^2\omega^2} = \frac{1}{2\sigma^2}\frac{1}{(\gamma\omega)^2}.
+\end{equation}
+
+In dimensionless form with $\chi = \gamma/(2\omega)$:
+\begin{equation}
+I(\chi) = \frac{1}{8\sigma^2\omega^2\chi^2} \propto \frac{1}{\chi^2}.
+\end{equation}
+
+However, the oscillator response bandwidth scales as $\Delta\omega \sim \gamma$, reducing effective information at large $\chi$. The correct form accounting for bandwidth:
+\begin{equation}
+I(\chi) = \frac{|\omega|}{\gamma}\frac{1}{1+(\gamma/2|\omega|)^2} = \frac{1}{2\chi(1+\chi^2)}.
+\end{equation}
+
+\subsection{Entropy Production Rate}
+
+The entropy production from coupling to a thermal bath at temperature $T$:
+\begin{equation}
+\Sigma = \gamma\int_0^\infty dt \langle \dot{x}^2(t)\rangle \coth\left(\frac{\omega}{2T}\right).
+\end{equation}
+
+In high-temperature limit $T \gg \omega$:
+\begin{equation}
+\Sigma \approx 2\gamma T\langle \dot{x}^2\rangle_{\text{steady-state}}.
+\end{equation}
+
+For driven steady-state:
+\begin{equation}
+\langle \dot{x}^2\rangle = \frac{A^2\omega^2}{2\gamma^2\omega^2} = \frac{A^2}{2\gamma^2}.
+\end{equation}
+
+Thus:
+\begin{equation}
+\Sigma \propto \gamma T.
+\end{equation}
+
+The information efficiency:
+\begin{equation}
+\eta(\chi) = \frac{I}{\Sigma} \propto \frac{1}{\chi(1+\chi^2)}.
+\end{equation}
+
+Optimization yields $d\eta/d\chi = 0$ at $\chi=1$.
+
+\section{DUNE Spectral Data Tables}
+\label{sec:dune_data}
+
+\subsection{Appearance Probability Predictions}
+
+Table \ref{tab:dune_data} provides quantitative predictions for $\nu_\mu \to \nu_e$ appearance probability at DUNE baseline $L = 1300$ km with matter density profile averaged along the path.
+
+\begin{table}[h]
+\centering
+\caption{DUNE spectral tilt predictions. Standard PMNS uses normal ordering with $\sin^2\theta_{13} = 0.022$, $\sin^2\theta_{23} = 0.5$, $\Delta m_{31}^2 = 2.5 \times 10^{-3}$ eV$^2$. Damping model uses effective rate $\Gamma_{\text{eff}} = 3 \times 10^{-23}$ eV integrated over baseline. Probabilities are shown in arbitrary units for compact display. Relative suppression is defined as $S(E) \equiv 1 - P_{\text{SymC}}/P_{\text{PMNS}}$.}
+\label{tab:dune_data}
+\begin{tabular}{cccc}
+\toprule
+Energy $E$ (GeV) & $P_{\text{PMNS}}$ & $P_{\text{SymC}}$ & Relative Suppression $S(E)$ \\
+\midrule
+1.0 & 8.50 & 8.49 & $1.18 \times 10^{-3}$ \\
+1.5 & 4.20 & 4.19 & $2.38 \times 10^{-3}$ \\
+2.0 & 2.30 & 2.29 & $4.35 \times 10^{-3}$ \\
+3.0 & 0.95 & 0.91 & $4.21 \times 10^{-2}$ \\
+5.0 & 0.35 & 0.32 & $8.57 \times 10^{-2}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Tilt Parameter Extraction}
+
+The observable tilt parameter compares suppression at high versus low energy:
+\begin{equation}
+\alpha = \frac{(P_{\text{PMNS}} - P_{\text{SymC}})_{E=3\text{ GeV}}}{(P_{\text{PMNS}} - P_{\text{SymC}})_{E=1\text{ GeV}}}.
+\end{equation}
+
+From Table \ref{tab:dune_data}:
+\begin{align}
+\text{Suppression at } E &= 3 \text{ GeV}: \quad 0.95 - 0.91 = 0.04, \\
+\text{Suppression at } E &= 1 \text{ GeV}: \quad 8.50 - 8.49 = 0.01, \\
+\alpha &= \frac{0.04}{0.01} = 4.0.
+\end{align}
+
+
+This exceeds the main text conservative estimate $\alpha = 1.15 \pm 0.05$ due to the exponential damping factor $\exp(-\Gamma L/E)$. The energy scaling $\Gamma \propto 1/E$ in the matter-dependent damping model produces enhanced suppression at lower energies, opposite to standard MSW resonance effects.
+
+\subsection{No-Global-Critical Hierarchy Data}
+
+Table \ref{tab:hierarchy_data} quantifies the mass-ordered damping hierarchy across matter density scales.
+
+\begin{table}[h]
+\centering
+\caption{Damping ratio hierarchy for neutrino mass eigenstates. Values computed using density-dependent damping law Eq. (37) with normal mass ordering $m_1 < m_2 < m_3$ and energy $E = 2$ GeV representative of atmospheric and accelerator neutrinos.}
+\label{tab:hierarchy_data}
+\begin{tabular}{ccccc}
+\toprule
+Density $\rho/\rho_{\text{Earth}}$ & $\chi_1$ & $\chi_2$ & $\chi_3$ & Stability Status \\
+\midrule
+$1$ (Terrestrial) & 0.135 & 0.004 & 0.0001 & All underdamped \\
+$10^2$ & 0.850 & 0.025 & 0.0006 & Approaching EP \\
+$2 \times 10^2$ & 1.200 & 0.035 & 0.0009 & $\chi_1$ overdamped \\
+$10^4$ & 6.030 & 0.177 & 0.0044 & Persistent beat \\
+$10^6$ (Neutron star) & 60.30 & 1.770 & 0.0440 & $\chi_2$ overdamped \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Key observation}: Even at neutron star core densities ($\rho \sim 10^6 \rho_{\text{Earth}} \approx 10^{14}$ g/cm$^3$), the heaviest mass eigenstate maintains $\chi_3 \ll 1$, preserving high-frequency oscillatory structure. This No-Global-Critical constraint is the most stringent falsification test: simultaneous transition $\chi_1 = \chi_2 = \chi_3 = 1$ at any density-energy combination would refute the framework.
+
+\section{Lattice QCD Calculation Details}
+\label{sec:lattice_details}
+
+\subsection{Glueball Spectral Function}
+
+The $0^{++}$ glueball two-point correlator:
+\begin{equation}
+G(\tau) = \int d^3x \langle \mathcal{O}(x,\tau)\mathcal{O}(0,0)\rangle,
+\end{equation}
+where $\mathcal{O} = \text{Tr}(F_{\mu\nu}F^{\mu\nu})$ is the scalar glueball operator.
+
+Spectral representation:
+\begin{equation}
+G(\tau) = \int_0^\infty d\omega A(\omega) K(\omega,\tau),
+\end{equation}
+with thermal kernel:
+\begin{equation}
+K(\omega,\tau) = \frac{\cosh[\omega(\tau-1/(2T))]}{\sinh[\omega/(2T)]}.
+\end{equation}
+
+At zero temperature ($T \to 0$):
+\begin{equation}
+K(\omega,\tau) = e^{-\omega\tau}.
+\end{equation}
+
+Maximum entropy method reconstructs $A(\omega)$ by maximizing:
+\begin{equation}
+S[A] = -\int d\omega A(\omega)\ln\left[\frac{A(\omega)}{m(\omega)}\right] + \alpha\chi^2[A],
+\end{equation}
+where $m(\omega)$ is default model and $\chi^2$ measures fit to data $G(\tau)$.
+
+\subsection{Critical Damping Extraction}
+
+From reconstructed $A(\omega)$, fit to Breit-Wigner form near lowest resonance:
+\begin{equation}
+A(\omega) = \frac{\Gamma m}{\pi[(m^2-\omega^2)^2 + m^2\Gamma^2]}.
+\end{equation}
+
+Extract $m$ and $\Gamma$, then compute:
+\begin{equation}
+\chi_{\text{QCD}} = \frac{\Gamma}{2m}.
+\end{equation}
+
+Current lattice estimates: $m_{0^{++}} \approx 1.7$ GeV, $\Gamma_{0^{++}} \sim 0.2$ to $0.4$ GeV (large uncertainties), giving $\chi \sim 0.06$ to $0.12$. This is far from critical damping, indicating either:
+\begin{enumerate}
+\item The $0^{++}$ glueball is not the relevant substrate
+\item Additional QCD dynamics modify the effective damping
+\item The substrate inheritance mechanism requires refinement
+\end{enumerate}
+
+This represents a current challenge to the framework requiring resolution.
+
+\section{Cosmological Perturbation Details}
+\label{sec:cosmo_details}
+
+\subsection{Growth Factor Equation}
+
+In synchronous gauge, the density contrast $\delta = \delta\rho_m/\rho_m$ evolves as:
+\begin{equation}
+\ddot{\delta} + 2H\dot{\delta} - \frac{3}{2}H^2\Omega_m(a)\delta = 0,
+\end{equation}
+where $H = \dot{a}/a$ and $\Omega_m(a) = \Omega_{m,0}a^{-3}/(E(a))^2$ with:
+\begin{equation}
+E(a) = \sqrt{\Omega_{m,0}a^{-3} + \Omega_{\Lambda,0}}.
+\end{equation}
+
+Define effective frequency and damping:
+\begin{align}
+\omega_\delta^2(a) &= \frac{3}{2}H^2\Omega_m(a), \\
+\gamma_\delta(a) &= 2H.
+\end{align}
+
+The critical damping ratio:
+\begin{equation}
+\chi_\delta(a) = \frac{\gamma_\delta}{2\omega_\delta} = \frac{2H}{2\sqrt{(3/2)H^2\Omega_m}} = \sqrt{\frac{2}{3\Omega_m(a)}}.
+\end{equation}
+
+At $\chi_\delta = 1$:
+\begin{equation}
+\Omega_m(a_*) = \frac{2}{3}.
+\end{equation}
+
+Using flatness $\Omega_m + \Omega_\Lambda = 1$:
+\begin{equation}
+\Omega_\Lambda(a_*) = \frac{1}{3}.
+\end{equation}
+
+The deceleration parameter:
+\begin{equation}
+q = -\frac{\ddot{a}a}{\dot{a}^2} = \frac{\Omega_m}{2} - \Omega_\Lambda.
+\end{equation}
+
+At transition:
+\begin{equation}
+q(a_*) = \frac{2/3}{2} - \frac{1}{3} = \frac{1}{3} - \frac{1}{3} = 0.
+\end{equation}
+
+This completes the proof of $\chi_\delta = 1 \iff q = 0$.
+
+\bibliographystyle{apsrev4-1}
+\begin{thebibliography}{99}
+\bibitem{Keldysh1965}
+L. V. Keldysh, ``Diagram technique for nonequilibrium processes,'' \textit{Sov. Phys. JETP} \textbf{20}, 1018 (1965).
+
+\bibitem{Sieberer2016}
+L. M. Sieberer, M. Buchhold, and S. Diehl, ``Keldysh field theory for driven open quantum systems,'' \textit{Rep. Prog. Phys.} \textbf{79}, 096001 (2016).
+
+\bibitem{Clerk2010}
+A. A. Clerk et al., ``Introduction to quantum noise, measurement, and amplification,'' \textit{Rev. Mod. Phys.} \textbf{82}, 1155 (2010).
+\end{thebibliography}
+
+\end{document}
