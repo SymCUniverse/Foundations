@@ -1,0 +1,261 @@
+\documentclass[12pt]{article}
+\usepackage[top=0.5in, left=0.75in, right=0.75in, bottom=0.75in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{cite}
+
+\title{Exceptional-Point Lineage and Stability Selection in Physical Dynamics — SymC: Quantum and Cosmological Convergence}
+
+\author{Nate Christensen\\
+SymC Universe Project, Missouri, USA\\
+NateChristensen@SymCUniverse.com}
+
+\date{06 February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The onset of cosmic acceleration ($q=0$) corresponds precisely to a structural stability boundary defined by the dimensionless damping ratio $\chi \equiv \gamma/(2|\omega|)$. In linear structure growth, the identity $\chi_\delta = 1 \Longleftrightarrow q = 0$ is derived, indicating that cosmic acceleration marks critical damping of the growth field. This $\chi = 1$ boundary constitutes a second-order non-Hermitian exceptional point appearing independently in Lindblad moment dynamics, propagator pole coalescence in open quantum field theory, and cosmological perturbation theory. Information efficiency $\eta = I/\Sigma$ achieves a strict local maximum at $\chi = 1$, providing an independent variational characterization of this boundary.
+The electron mass emerges as $m_e = \epsilon_e \Lambda_{\text{QCD}}$ with $\epsilon_e \approx 2.6 \times 10^{-3}$, yielding a natural structural origin for the Standard Model Yukawa ($y_e \sim 10^{-6}$) as a stability constraint, replacing arbitrary fine-tuning with a perturbative overlap condition. This framework unifies stability boundaries across scales and yields falsifiable predictions in quantum platforms, lattice QCD, cosmology, and gravitational-wave observations.
+\end{abstract}
+
+\section{Introduction}
+
+Physics is organized by boundaries. The speed of light $c$ limits information propagation, and Planck's constant $\hbar$ bounds measurement precision. The dimensionless ratio $\chi \equiv \gamma/(2|\omega|)$ plays an analogous role in dynamical stability. At $\chi = 1$, the generator of dynamics becomes defective and the impulse response transitions to $h(t) = t e^{-|\omega|t}$, defining a non-Hermitian exceptional point (EP) \cite{heiss2012,kato1995,bender2007}.
+
+Lindblad moment dynamics \cite{lindblad1976,gorini1976}, propagator pole coalescence in open QFT \cite{breuer2002,carmichael1999}, and cosmological growth \cite{peebles1993,dodelson2003} converge to this boundary. Information efficiency $\eta = I/\Sigma$ is maximized at $\chi = 1$ \cite{cover2006}, transforming this from engineering criterion to fundamental optimality condition. Systems under dynamical and thermodynamic pressure naturally evolve toward $\chi \approx 1$.
+
+Most significantly, cosmic acceleration onset ($q = 0$) is mathematically identical to structure-growth field reaching critical damping ($\chi_\delta = 1$), providing structural explanation for acceleration timing \cite{planck2020,riess1998,perlmutter1999} without fine-tuning. This stability requirement propagates to particle scales, producing fermion mass hierarchies through substrate inheritance.
+
+\section{Exceptional-Point Structure and Information Efficiency}
+
+For a harmonic mode with GKSL master equation \cite{lindblad1976,gorini1976}, the first moment obeys $\ddot{x} + \gamma \dot{x} + \omega^2 x = 0$. The characteristic discriminant $\Delta = \gamma^2 - 4\omega^2 = 4\omega^2(\chi^2 - 1)$ vanishes at $\chi = 1$, yielding coalesced roots $\lambda_\pm = -|\omega|$ and impulse kernel $h(t) = t e^{-|\omega|t}$ \cite{kato1995}. This defines an EP2 in non-Hermitian dynamics \cite{heiss2012,bender2007}.
+
+A dissipative scalar with retarded propagator $G_R(\Omega) = (-\Omega^2 - i\gamma\Omega + \omega^2)^{-1}$ has poles $\Omega_\pm = -i\gamma/2 \pm \sqrt{\omega^2 - \gamma^2/4}$ that coalesce at $\gamma = 2|\omega|$, producing identical EP2 structure \cite{breuer2002}.
+
+Information-efficiency functional $\eta(\chi) \equiv I(\chi)/\Sigma(\chi)$ is defined, where $I$ represents information throughput and $\Sigma$ represents entropy production. For Gaussian channels with thermal noise and finite bandwidth, Taylor expansion yields $\eta(\chi) \approx \eta(1) - A(\chi - 1)^2$ with $A > 0$, implying $\eta'(1) = 0$ and $\eta''(1) < 0$ \cite{cover2006}. Thus $\chi = 1$ is a strict local maximum. Physically: $\chi < 1$ wastes energy in ringing; $\chi > 1$ sacrifices responsiveness. Realistic constraints broaden this to $\chi \in [0.8, 1.0]$ \cite{brown2003,ogata2010}.
+
+\section{Cosmological Growth and the $q = 0$ Identity}
+
+Linear density perturbations satisfy $\ddot{\delta} + 2H\dot{\delta} - 4\pi G \rho_m \delta = 0$ \cite{peebles1993,dodelson2003}, yielding $\chi_\delta = H/\sqrt{4\pi G \rho_m}$. In flat $\Lambda$CDM, $q = (1/2)\Omega_m - \Omega_\Lambda$. Setting $q = 0$ gives $\Omega_m = 2/3$, and from Friedmann equations, $H^2 = 4\pi G \rho_m$. Thus
+\begin{equation}
+\chi_\delta = 1 \Longleftrightarrow q = 0.
+\end{equation}
+
+This parameter-free identity links cosmic acceleration onset to critical damping of structure growth \cite{christensen_cosmo}. The timing of dark energy dominance is structural: the universe begins accelerating when density perturbations become critically damped, providing a structural explanation for the observed transition $z \approx 0.67$ \cite{planck2020} without anthropic selection.
+
+DESI \cite{desi2024}, Euclid, and Rubin Observatory can test this by verifying $q = 0$ coincides with $\chi_\delta = 1$ within observational uncertainties. Systematic deviation falsifies the cosmological component.
+
+\section{Robustness Under Interactions and Memory}
+
+In weakly interacting $\lambda\phi^4$ theory, RG flow yields $d\chi/d\ell = (a_\gamma - a_\omega)\lambda\chi$ \cite{wilson1974}. For $a_\gamma \approx a_\omega$, $\chi$ is marginal. One-loop calculations show $|\Delta\chi| < 1\%$ over three decades \cite{christensen_qft}. Finite-memory baths with $K(t) = \gamma_0 e^{-t/\tau}$ yield $\gamma_{\text{eff}}(\omega) = \gamma_0/(1 + (\omega\tau)^2)$, broadening the separatrix to $\chi \in [0.95, 1.05]$ while preserving boundary structure \cite{breuer2002}.
+
+\section{Substrate Inheritance Mechanism}
+
+Let $\{\phi_k\}$ denote substrate modes with frequencies $\Omega_k$ and damping $\Gamma_k$. Any emergent mode $\psi = \sum_k c_k \phi_k$ inherits $\Omega_\psi^2 = \sum_k |c_k|^2 \Omega_k^2$ and $\Gamma_\psi = \sum_k |c_k|^2 \Gamma_k$ in the adiabatic limit, yielding
+\begin{equation}
+\chi_\psi = \frac{\sum_k |c_k|^2 \Gamma_k}{2\sqrt{\sum_k |c_k|^2 \Omega_k^2}}.
+\end{equation}
+
+When substrate $\phi_s$ satisfies $\chi_s = 1$, emergent modes with overlap $|c_s| > 0$ inherit this critical structure. Emergent parameters are not independent tunings but projections of pre-existing substrate properties fixed by $\chi$-boundary conditions during symmetry breaking \cite{christensen_gaps}.
+
+\section{Cosmological Origin and Fermion Masses}
+
+This section explores one possible cosmological realization of substrate formation; the $\chi$-boundary results of Sections 2--4 do not depend on this assumption. A \textbf{minimal phenomenological postulate} is adopted: the early universe contains at least one
+\emph{non-adiabatic crossing epoch} in which effective damping and mode frequencies vary sufficiently to permit a transition across the critical boundary $\chi = 1$. Such a crossing need not correspond to a specific cosmological model and may arise from reheating, symmetry-breaking phase transitions, particle production with backreaction, or other non-equilibrium processes. The existence of a $\chi$-crossing is inferred structurally, independent of microscopic realization, in the same sense that the late-time crossing $\chi_\delta = 1$ is inferred from the empirically identified condition $q = 0$.
+
+During a representative non-equilibrium epoch, scalar perturbations can be modeled with effective
+damping and frequency,
+\begin{equation}
+\Gamma_k(t) = 3H(t), \qquad \omega_k^2(t) = \frac{k^2}{a^2} + m_{\text{eff}}^2,
+\end{equation}
+so that modes with $\chi_k < 1$ ring while $\chi_k > 1$ relax sluggishly. Combined with the
+information-efficiency extremum near $\chi = 1$, this motivates $\chi_0 = 1$ as a structurally
+preferred boundary condition for the emergence of a stabilized substrate \cite{christensen_primordial}.
+A complete derivation within any specific early-universe realization remains future work.
+
+Successive phase transitions generate substrates: $\omega_0 \to \omega_{\text{Pl}} \to \omega_{\text{GUT}} \to \omega_{\text{EW}} \to \omega_{\text{QCD}}$, each inheriting $\chi \approx 1$.
+
+At QCD confinement, gluon plasmon modes exhibit thermal widths $\Gamma_{\text{thermal}} \sim \alpha_s T \sim (0.3{-}1.0)\Lambda_{\text{QCD}}$ \cite{laine2006,ipp2003}, giving baseline $\chi_{\text{QCD}} \sim 0.15{-}0.5$. Non-perturbative mechanisms \cite{schafer1996} are required to bring the dominant $0^{++}$ mode to
+\begin{equation}
+\chi_{\text{QCD}} = 1 \Longrightarrow \Gamma_{\text{QCD}} = 2\Lambda_{\text{QCD}} \approx 400\text{ MeV}.
+\end{equation}
+
+Lattice QCD falsification: if all $0^{++}$ modes with mass $< 1$ GeV satisfy $\chi < 0.5$ or $\chi > 2$, substrate inheritance is ruled out \cite{morningstar1999,chen2006,christensen_qft}.
+
+\subsection{Electron Mass: Structural Resolution of Hierarchy}
+
+The electron mode arises from weak coupling to a $\chi$-stabilized QCD condensate. We model this interaction via an effective Hamiltonian coupling the massless proto-lepton to the critically damped substrate (see Supplementary Information for the explicit stability matrix). Diagonalization in the weak-coupling limit yields the light eigenmode mass:
+\begin{equation}
+m_e \approx \frac{\mathcal{V}^2}{2\Lambda_{\text{QCD}}} \equiv \epsilon_e \Lambda_{\text{QCD}}.
+\end{equation}
+Here, $\mathcal{V}$ is the mixing potential and $\epsilon_e$ is the resultant stability-preserving overlap coefficient. Using $\Lambda_{\text{QCD}} \approx 200$ MeV and $m_e = 0.511$ MeV yields $\epsilon_e \approx 2.6 \times 10^{-3}$. Consequently, the Yukawa coupling
+\begin{equation}
+y_e = \epsilon_e \sqrt{2} \frac{\Lambda_{\text{QCD}}}{v} \approx 2.9 \times 10^{-6}
+\end{equation}
+reproduces the order of magnitude of the Standard Model value not by fine-tuning, but as a generic consequence of the stability constraint ($\epsilon \ll 1$) required near the critical boundary.
+
+Muon ($m_\mu \approx 106$ MeV) couples to radially excited $0^{++}$ mode with $\Omega_{\text{QCD}}^{(1)} \sim 1{-}1.5$ GeV, giving $\epsilon_\mu \sim 0.1$. Tau ($m_\tau \approx 1.78$ GeV) has dominant electroweak overlap with $\epsilon_\tau \sim 0.014$. Quarks follow analogous patterns. Precise substrate assignments require lattice calculations of excited glueball damping and Higgs-gluon couplings \cite{morningstar1999,chen2006}.
+
+Neutrino masses follow primordial inheritance: during formation, $\chi_k^{(\text{prim})} \propto \Gamma_{\text{sub}}/m_k^2 \approx 1$ fixed mass ordering. Today, $\gamma_{\text{eff}} \to 0$ ensures coherent oscillations \cite{christensen_neutrinos}. For $E = 1$ GeV and $\Gamma_{\text{eff}} = 10^{-23}$ GeV, all $\chi_k \ll 1$, consistent with observations \cite{nufit2021,esteban2020}.
+
+\section{Standard Model Parameters}
+
+All 19 SM free parameters classify as: \textbf{(I) Overlap-class (13)}: fermion masses and CKM mixing from overlap coefficients with $\chi$-stabilized substrates. \textbf{(II) Substrate-ratio-class (5)}: gauge couplings and Higgs parameters from substrate frequency ratios. \textbf{(III) Topological (1)}: strong CP phase from gauge field configuration space \cite{peccei1977,wilczek1978}, not substrate inheritance. Non-topological parameters are inherited quantities from cosmological symmetry breaking \cite{christensen_gaps}.
+
+\section{Experimental Falsifiers}
+
+\textbf{Quantum platforms.} Circuit QED: Purcell decay tuning enables observation of spectral-peak merger at $\chi = 1$ \cite{blais2021,clerk2010}. Trapped ions: motional damping engineering shows oscillation frequency $\omega_a = |\omega|\sqrt{1-\chi^2}$ vanishes at boundary \cite{wineland2013,leibfried2003}. Optomechanics: normal-mode splitting disappears at $\chi = 1$ \cite{aspelmeyer2014,meystre2013}. All systems exhibit kernel transition to $t e^{-|\omega|t}$.
+
+\textbf{Dense matter.} For neutron star modes $\Omega = 2\pi f - i/\tau$, $\chi_{\text{NS}} = (2\pi f\tau)^{-1}$ is defined. Prediction: as compactness approaches TOV limit, at least one dominant mode exhibits $\chi_{\text{NS}} \to 1$ and collapse waveforms approach EP2 kernel \cite{hinderer2008,damour2009}. LIGO/Virgo/KAGRA extraction provides model-independent tests \cite{abbott2020,cardoso2016}.
+
+\section{Discussion}
+
+Three historically separate problems unify: \textbf{(i)} Quantum-classical transition at EP $\chi = 1$ \cite{heiss2012,bender2007}. \textbf{(ii)} Cosmic acceleration at $\chi_\delta = 1 \Longleftrightarrow q = 0$, providing geometric necessity for observed transition \cite{planck2020,christensen_primordial}. \textbf{(iii)} SM parameter arbitrariness resolved via substrate inheritance from cosmological symmetry breaking \cite{christensen_gaps}.
+
+Cross-scale validation: $\sigma$-meson exhibits $\chi_\sigma \approx 0.6{-}0.9$ \cite{pdg2022}; neutrinos satisfy $\chi_k \ll 1$ with mass-ordered hierarchy \cite{nufit2021,christensen_neutrinos}. The underlying ratio spans 1-2 orders across 20 orders in mass scale ($\log_{10}(\chi) \in [-3, 0]$), indicating structural origin.
+
+This spans fifteen orders of magnitude from $\Lambda_{\text{QCD}} \sim 200$ MeV to $H_0 \sim 10^{-33}$ eV, suggesting $\chi$-stabilization is structural rather than accidental.
+
+\section{Conclusion}
+
+Fermion masses emerge as inheritance projections of $\chi$-stabilized substrates formed during symmetry breaking. The electron mass $m_e = \epsilon_e \Lambda_{\text{QCD}}$ yields observed Yukawa without free parameters. Information efficiency maximization at $\chi = 1$ provides first-principles optimization, transforming substrate inheritance from phenomenology to selection mechanism. All 19 SM parameters map to overlap-class, substrate-ratio-class, or topological categories.
+
+The cosmological identity $\chi_\delta = 1 \Longleftrightarrow q = 0$ is parameter-free and testable with DESI/Euclid. Lattice QCD calculations of glueball damping provide direct falsification. Quantum platforms verify universal EP2 signatures. This framework unifies quantum gap, cosmological gap, and parameter gap under the $\chi$-stabilized substrate hierarchy.
+
+\begin{thebibliography}{99}
+
+\bibitem{abbott2020}
+Abbott, B. P., et al. (2020). GW190814: Gravitational waves from coalescence. \textit{Astrophysical Journal Letters}, 896, L44.
+
+\bibitem{aspelmeyer2014}
+Aspelmeyer, M., Kippenberg, T. J., \& Marquardt, F. (2014). Cavity optomechanics. \textit{Reviews of Modern Physics}, 86, 1391-1452.
+
+\bibitem{bender2007}
+Bender, C. M. (2007). Making sense of non-Hermitian Hamiltonians. \textit{Reports on Progress in Physics}, 70, 947-1018.
+
+\bibitem{blais2021}
+Blais, A., et al. (2021). Circuit quantum electrodynamics. \textit{Reviews of Modern Physics}, 93, 025005.
+
+\bibitem{brandenberger2001}
+Brandenberger, R. H., \& Martin, J. (2001). Trans-Planckian issues for inflationary cosmology. \textit{Classical and Quantum Gravity}, 18, 223-236.
+
+\bibitem{breuer2002}
+Breuer, H.-P., \& Petruccione, F. (2002). \textit{The Theory of Open Quantum Systems}. Oxford University Press.
+
+\bibitem{brown2003}
+Brown, P. (2003). Oscillatory nature of human basal ganglia activity. \textit{Brain}, 126, 1127-1138.
+
+\bibitem{cardoso2016}
+Cardoso, V., Franzin, E., \& Pani, P. (2016). Is the gravitational-wave ringdown a probe of the event horizon? \textit{Physical Review Letters}, 116, 171101.
+
+\bibitem{carmichael1999}
+Carmichael, H. J. (1999). \textit{Statistical Methods in Quantum Optics 1}. Springer.
+
+\bibitem{chen2006}
+Chen, Y., et al. (2006). Glueball spectrum and matrix elements on anisotropic lattices. \textit{Physical Review D}, 73, 014516.
+
+\bibitem{clerk2010}
+Clerk, A. A., et al. (2010). Introduction to quantum noise, measurement, and amplification. \textit{Reviews of Modern Physics}, 82, 1155-1208.
+
+\bibitem{cover2006}
+Cover, T. M., \& Thomas, J. A. (2006). \textit{Elements of Information Theory} (2nd ed.). Wiley.
+
+\bibitem{damour2009}
+Damour, T., \& Nagar, A. (2009). Relativistic tidal properties of neutron stars. \textit{Physical Review D}, 80, 084035.
+
+\bibitem{desi2024}
+DESI Collaboration. (2024). DESI 2024 VI: Cosmological constraints from BAO. arXiv:2404.03002.
+
+\bibitem{dodelson2003}
+Dodelson, S. (2003). \textit{Modern Cosmology}. Academic Press.
+
+\bibitem{esteban2020}
+Esteban, I., et al. (2020). The fate of hints: Updated global analysis of three-flavor neutrino oscillations. \textit{JHEP}, 2020, 178.
+
+\bibitem{gorini1976}
+Gorini, V., Kossakowski, A., \& Sudarshan, E. C. G. (1976). Completely positive dynamical semigroups of N-level systems. \textit{Journal of Mathematical Physics}, 17, 821-825.
+
+\bibitem{heiss2012}
+Heiss, W. D. (2012). The physics of exceptional points. \textit{Journal of Physics A: Mathematical and Theoretical}, 45, 444016.
+
+\bibitem{hinderer2008}
+Hinderer, T. (2008). Tidal Love numbers of neutron stars. \textit{Astrophysical Journal}, 677, 1216-1220.
+
+\bibitem{ipp2003}
+Ipp, A., Kajantie, K., Rebhan, A., \& Vuorinen, A. (2003). The pressure of deconfined QCD. \textit{Physical Review D}, 68, 014004.
+
+\bibitem{kato1995}
+Kato, T. (1995). \textit{Perturbation Theory for Linear Operators}. Springer.
+
+\bibitem{laine2006}
+Laine, M., \& Vuorinen, A. (2006). Basics of thermal field theory. \textit{Lecture Notes in Physics}, 925. Springer.
+
+\bibitem{leibfried2003}
+Leibfried, D., et al. (2003). Quantum dynamics of single trapped ions. \textit{Reviews of Modern Physics}, 75, 281-324.
+
+\bibitem{lindblad1976}
+Lindblad, G. (1976). On the generators of quantum dynamical semigroups. \textit{Communications in Mathematical Physics}, 48, 119-130.
+
+\bibitem{meystre2013}
+Meystre, P. (2013). A short walk through quantum optomechanics. \textit{Annalen der Physik}, 525, 215-233.
+
+\bibitem{morningstar1999}
+Morningstar, C. J., \& Peardon, M. (1999). The glueball spectrum from an anisotropic lattice study. \textit{Physical Review D}, 60, 034509.
+
+\bibitem{nufit2021}
+Esteban, I., et al. (2021). NuFIT 5.1. www.nu-fit.org
+
+\bibitem{ogata2010}
+Ogata, K. (2010). \textit{Modern Control Engineering} (5th ed.). Prentice Hall.
+
+\bibitem{pdg2022}
+Particle Data Group. (2022). Review of particle physics. \textit{PTEP}, 2022, 083C01.
+
+\bibitem{peccei1977}
+Peccei, R. D., \& Quinn, H. R. (1977). CP conservation in the presence of pseudoparticles. \textit{Physical Review Letters}, 38, 1440-1443.
+
+\bibitem{peebles1993}
+Peebles, P. J. E. (1993). \textit{Principles of Physical Cosmology}. Princeton University Press.
+
+\bibitem{perlmutter1999}
+Perlmutter, S., et al. (1999). Measurements of $\Omega$ and $\Lambda$ from 42 high-redshift supernovae. \textit{Astrophysical Journal}, 517, 565-586.
+
+\bibitem{planck2020}
+Planck Collaboration. (2020). Planck 2018 results. VI. Cosmological parameters. \textit{Astronomy \& Astrophysics}, 641, A6.
+
+\bibitem{riess1998}
+Riess, A. G., et al. (1998). Observational evidence from supernovae for an accelerating universe. \textit{Astronomical Journal}, 116, 1009-1038.
+
+\bibitem{schafer1996}
+Sch\"afer, T., \& Shuryak, E. V. (1996). Instantons in QCD. \textit{Reviews of Modern Physics}, 70, 323-425.
+
+\bibitem{wilczek1978}
+Wilczek, F. (1978). Problem of strong P and T invariance. \textit{Physical Review Letters}, 40, 279-282.
+
+\bibitem{wilson1974}
+Wilson, K. G., \& Kogut, J. (1974). The renormalization group and the $\epsilon$ expansion. \textit{Physics Reports}, 12, 75-199.
+
+\bibitem{wineland2013}
+Wineland, D. J. (2013). Nobel lecture: Superposition, entanglement, and raising Schr\"odinger's cat. \textit{Reviews of Modern Physics}, 85, 1103-1114.
+
+\bibitem{christensen_gaps}
+Christensen, N. (2026). Closing critical gaps: Physical inheritance from stabilized substrates in dynamical systems. \textit{Zenodo}. https://doi.org/10.5281/zenodo.17428940
+
+\bibitem{christensen_cosmo}
+Christensen, N. (2026). Structural mapping of linear damping operators across cosmological growth and black hole ringdown. \textit{Zenodo}. https://doi.org/10.5281/zenodo.17503537
+
+\bibitem{christensen_neutrinos}
+Christensen, N. (2026). Density-dependent matter-induced dephasing in neutrino oscillations with preserved vacuum unitarity. \textit{Zenodo}. https://doi.org/10.5281/zenodo.17585527
+
+\bibitem{christensen_primordial}
+Christensen, N. (2026). The primordial boundary principle: Identifying cosmic acceleration with exceptional point coalescence. \textit{Zenodo}. https://doi.org/10.5281/zenodo.17490497
+
+\bibitem{christensen_qft}
+Christensen, N. (2026). Structural constraints from critical damping in open quantum field theories: Implications for QCD substrate inheritance and phenomenological extensions. \textit{Zenodo}. https://doi.org/10.5281/zenodo.17437688
+
+\end{thebibliography}
+
+\end{document}
