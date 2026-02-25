@@ -1,0 +1,413 @@
+\documentclass[12pt]{article}
+\usepackage[top=0.5in, left=0.75in, right=0.75in, bottom=0.75in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\title{\textbf{Exceptional-Point Stability Boundaries from Quantum Dissipation to Cosmological Acceleration}}
+
+\author{Nate Christensen\\
+\small SymC Universe Project, Missouri, USA\\
+\small \texttt{NateChristensen@SymCUniverse.com}}
+
+\date{09 February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent Dissipative dynamics across physical systems exhibit organizing structural boundaries. The dimensionless damping ratio $\chi \equiv \gamma/(2\omega)$ defines a stability architecture in which the critical threshold $\chi=1$ marks a second-order non-Hermitian Exceptional Point (EP). A parameter-free identity is derived linking cosmic acceleration to critical damping, $\chi_{\delta}=1 \iff q=0$, indicating a structural constraint on the timing of dark energy dominance. The result is structural rather than causal: it follows from the form of the growth and Friedmann equations within flat $\Lambda$CDM, independent of any microscopic model for dark energy.
+This stability condition propagates through a substrate inheritance relation, whereby emergent modes inherit EP structure from vacuum precursors. Within this framework, the observed particle distribution is consistent with stability organization: long-lived matter occupies localized stability basins at $\chi \ll 1$, while short-lived excitations cluster near the $\chi=1$ interface. The framework replaces ad hoc parameter tuning with a stability-based classification principle.
+\end{abstract}
+
+% ============================================================
+\section{Boundary Structure in Dissipative Dynamics}
+% ============================================================
+
+Many physical theories are structured around boundary conditions and limiting principles. The speed of light $c$ limits information propagation, and Planck's constant $\hbar$ bounds measurement precision. The dimensionless ratio
+\begin{equation}\label{eq:chi_def}
+\chi \equiv \frac{\gamma}{2\omega}
+\end{equation}
+plays an analogous role in dynamical stability. This stability-boundary formalism is developed in Ref.~\cite{christensen_gaps} and identifies $\chi=1$ as a structural separatrix in dissipative dynamics.
+
+At $\chi = 1$, the generator of dynamics becomes defective and the impulse response transitions to
+\begin{equation}\label{eq:ep_kernel}
+h(t) = t e^{-|\omega|t},
+\end{equation}
+defining a second-order non-Hermitian exceptional point (EP2) \cite{bender2007,heiss2012,kato1995,bergholtz2021}.
+
+
+Quadratic eigenproblems for linear response arise across classical dissipative modes, retarded propagators in open quantum field theory, and cosmological growth dynamics \cite{breuer2002,carmichael1999,peebles1993,dodelson2003}. In each case, the exceptional-point kernel appears when the damping rate matches twice the characteristic frequency, $\chi=\gamma/(2\omega)=1$. Markovian open-system generators of Lindblad type can realize the same EP2 structure in suitable reduced response channels or effective mode equations (Supplementary Section~1) \cite{lindblad1976,gorini1976}, but the EP condition is asserted here at the level of the shared quadratic response structure.
+
+For representative linear response channels with Gaussian noise and finite bandwidth, an information-efficiency functional $\eta(\chi)\equiv I(\chi)/\Sigma(\chi)$ admits a strict local maximum in a narrow neighborhood of $\chi=1$ under standard smoothness conditions (Supplementary Section 2). This supports the interpretation of near-critical damping as a robust operating point balancing responsiveness against dissipation in common model classes.
+
+A strict local maximum at $\chi=1$ follows if $\eta(\chi)$ is twice differentiable in a neighborhood of $\chi=1$, $\eta'(1)=0$, and $\eta''(1)<0$. The Gaussian-channel examples provide an explicit realization of these conditions.
+
+Most significantly, the onset of cosmic acceleration ($q=0$) is mathematically identical to the structure growth field reaching critical damping ($\chi_\delta = 1$), providing a structural correspondence for the timing of late-time acceleration without fine-tuning.
+
+% ============================================================
+\section{Exceptional-Point Kernel and Efficiency Extremum}
+% ============================================================
+
+For a representative linear mode whose observable response obeys a second-order dissipative equation:
+\begin{equation}
+\ddot{x} + \gamma \dot{x} + \omega^2 x = 0 ,
+\end{equation}
+the characteristic discriminant
+\begin{equation}
+\Delta = \gamma^2 - 4\omega^2 = 4\omega^2(\chi^2 - 1)
+\end{equation}
+vanishes at $\chi = 1$, yielding coalesced roots $\lambda_\pm = -|\omega|$ and the EP2 impulse kernel \eqref{eq:ep_kernel} \cite{kato1995}.
+Such quadratic response structures appear directly in classical linear-response theory and in retarded propagators of dissipative quantum field theory \cite{breuer2002}. Lindblad-form Markovian dynamics can realize the same EP2 kernel in appropriate effective response channels; the mapping and its scope are given explicitly in Supplementary Section~1 \cite{lindblad1976,gorini1976}.
+
+An identical structure arises in dissipative quantum field theory. For a scalar mode with retarded propagator
+\begin{equation}
+G_R(\Omega) = \frac{1}{-\Omega^2 - i\gamma \Omega + \omega^2},
+\end{equation}
+the poles
+\begin{equation}
+\Omega_\pm = -\frac{i\gamma}{2} \pm \sqrt{\omega^2 - \frac{\gamma^2}{4}}
+\end{equation}
+coalesce at $\gamma = 2|\omega|$, reproducing the same EP2 kernel \cite{breuer2002,bergholtz2021}.
+
+The information-efficiency functional
+\begin{equation}
+\eta(\chi) \equiv \frac{I(\chi)}{\Sigma(\chi)}
+\end{equation}
+exhibits a strict local maximum at $\chi = 1$ in Gaussian channel models (Supplementary Section~2). This identifies $\chi=1$ as a recurrent structural boundary in systems that simultaneously admit responsiveness and stability.
+
+Physically, $\chi<1$ corresponds to persistent ringing, while $\chi>1$ sacrifices responsiveness. Realistic constraints broaden the optimum to a narrow window near criticality \cite{ogata2010}. Figure~\ref{fig:topology} visualizes this dual structure as an exceptional-point manifold separating overdamped and underdamped regimes.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{Fig1_VacMatterTopology.png}
+\caption{\textbf{Topological structure of the stability manifold.} Three-dimensional visualization in $(\log_{10}\omega, \log_{10}\Gamma, \chi)$ space where $\chi = \Gamma/(2\omega)$ is the dimensionless damping ratio. The colored surface represents the exceptional point (EP) manifold at $\chi = 1$, separating overdamped ($\chi > 1$, magenta) and underdamped ($\chi < 1$, blue) dynamical regimes. Representative systems illustrate an ordering by observed stability index: vacuum-lineage processes appear near the critical line, while long-lived excitations lie deep in the underdamped basin. The schematic language is classificatory and does not assert a microscopic pathway. Vertical projection lines connect the 3D topology to the empirical validation plane (Figure~\ref{fig:lineage}).}
+\label{fig:topology}
+\end{figure}
+
+\subsection*{Structural interpretation}
+The exceptional-point boundary at $\chi=1$ is not interpreted as a dynamical attractor. Rather, it serves as a structural separatrix where impulse response transitions from oscillatory to monotone decay. In representative dissipative channels (second-order systems with Gaussian noise and finite bandwidth), the information-efficiency functional $\eta(\chi)$ admits a strict local maximum at $\chi=1$. Departures from $\chi\approx 1$ incur complementary penalties: $\chi<1$ produces persistent ringing that degrades signal fidelity under finite bandwidth, while $\chi>1$ produces slow relaxation that suppresses information throughput for fixed dissipation. The framework interprets near-critical operation as a robust efficiency extremum, consistent with observed system clustering in the range $0.8\lesssim\chi\lesssim1.0$.
+
+% ============================================================
+\section{Cosmic Crossing: $\chi_\delta = 1 \Longleftrightarrow q = 0$}
+% ============================================================
+
+Linear density perturbations satisfy
+\begin{equation}
+\ddot{\delta} + 2H\dot{\delta} - 4\pi G\rho_m \delta = 0
+\end{equation}
+\cite{peebles1993,dodelson2003}, yielding
+\begin{equation}
+\chi_\delta = \frac{H}{\sqrt{4\pi G\rho_m}} .
+\end{equation}
+
+In flat $\Lambda$CDM, the deceleration parameter
+\begin{equation}
+q = \frac{1}{2}\Omega_m - \Omega_\Lambda
+\end{equation}
+vanishes at $\Omega_m = 2/3$. The Friedmann equations then give
+\begin{equation}
+H^2 = 4\pi G\rho_m ,
+\end{equation}
+implying the exact identity
+\begin{equation}\label{eq:chi_q_identity}
+\chi_\delta = 1 \Longleftrightarrow q = 0 .
+\end{equation}
+
+This parameter-free identity links cosmic acceleration onset to critical damping of structure growth.
+
+\paragraph{Scope of the identity.}
+Equation~\eqref{eq:chi_q_identity} holds \emph{exactly} for spatially flat $\Lambda$CDM. In non-flat cosmologies or in $w$CDM with $w\neq -1$, the synchronization between the acceleration transition and the critical-damping crossing is no longer exact, but the stability crossing $\chi_\delta=1$ remains well-defined and shifts to a nearby redshift. This makes departures from $\Lambda$CDM testable as measurable offsets between the $q=0$ and $\chi_\delta=1$ transitions. Figure~\ref{fig:synchronization} demonstrates this synchronization.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Fig3_StabilityArch.png}
+\caption{\textbf{Cosmological synchronization of critical damping and acceleration onset.} \textbf{(a)} Temporal evolution showing the deceleration parameter $q(z)$ (blue) and stability index $\chi_\delta(z)$ (magenta dashed) as functions of redshift, computed directly from the flat-$\Lambda$CDM Friedmann and growth equations with concordance parameters $\Omega_m=0.315$, $\Omega_\Lambda=0.685$ \cite{planck2020}; no fitting functions are used. Both curves cross at $z_t \approx 0.63$, where $q = 0$ and $\chi_\delta = 1$ simultaneously. \textbf{(b)} Phase-space trajectory in $(\Omega_m, \Omega_\Lambda)$ coordinates under concordance $\Lambda$CDM. Flow lines converge toward the critical point $\Omega_m = 2/3$, $\Omega_\Lambda = 1/3$ where the structural identity is satisfied; the star marks the present-day concordance values.}
+\label{fig:synchronization}
+\end{figure}
+
+This result is parameter-free within flat $\Lambda$CDM and independent of any cosmological origin model \cite{planck2020,riess1998,perlmutter1999}.
+
+% ============================================================
+\section{Robustness Under Interactions and Memory}
+% ============================================================
+
+In weakly interacting $\lambda\phi^4$ theory, renormalization-group flow yields
+\begin{equation}
+\frac{d\chi}{d\ell} = (a_\gamma - a_\omega)\lambda \chi ,
+\end{equation}
+so that $\chi$ remains marginal when $a_\gamma \approx a_\omega$ \cite{wilson1974}. One-loop calculations confirm $|\Delta\chi| < 0.3\%$ over three decades, with two-loop corrections of order $3\times10^{-5}$ (see Supplementary Section~6 for explicit one-loop and two-loop derivations) \cite{christensen_qft}.
+
+Finite-memory baths with kernel $K(t)=\gamma_0 e^{-t/\tau}$ yield an effective damping
+\begin{equation}\label{eq:gamma_eff}
+\gamma_{\mathrm{eff}}(\omega) = \frac{\gamma_0}{1+(\omega\tau)^2},
+\end{equation}
+broadening but not destroying the critical boundary \cite{breuer2002,clerk2010} (see Supplementary Section~10 for fractional and power-law memory extensions). The physically realized damping ratio in such environments is therefore
+\begin{equation}\label{eq:chi_phys}
+\chi_{\mathrm{phys}}(\omega) \equiv \frac{\gamma_{\mathrm{eff}}(\omega)}{2\omega}
+= Z(\omega\tau)\,\chi_{\mathrm{bare}},
+\qquad
+Z(\omega\tau)=\frac{1}{1+(\omega\tau)^2}<1,
+\end{equation}
+so that the exceptional point at $\chi_{\mathrm{bare}}=1$ corresponds to a downward-shifted operating point when expressed in terms of effective rates.
+
+% ============================================================
+\section{Substrate Inheritance as a Structural Relation}
+% ============================================================
+
+Let $\{\phi_k\}$ denote substrate modes with frequencies $\Omega_k$ and damping $\Gamma_k$. Any emergent mode $\psi = \sum_k c_k \phi_k$ inherits effective parameters
+\begin{equation}
+\Omega_\psi^2 = \sum_k |c_k|^2 \Omega_k^2, \qquad
+\Gamma_\psi = \sum_k |c_k|^2 \Gamma_k .
+\end{equation}
+The resulting damping ratio is
+\begin{equation}
+\chi_\psi = \frac{\Gamma_\psi}{2\sqrt{\Omega_\psi^2}} .
+\end{equation}
+
+To make the overlap structure intrinsic, define the stabilized substrate subspace $\mathcal{H}_s$ and the corresponding orthogonal projector
+\begin{equation}\label{eq:Ps_def}
+\mathcal{P}_s \equiv \sum_{i\in s} |\phi_i\rangle\langle\phi_i|.
+\end{equation}
+For any proto-mode $|\psi_{\mathrm{proto}}\rangle$, the substrate overlap is defined geometrically as
+\begin{equation}\label{eq:epsilon_def}
+\epsilon_\psi \equiv \|\mathcal{P}_s |\psi_{\mathrm{proto}}\rangle\|^2
+= \langle \psi_{\mathrm{proto}} | \mathcal{P}_s | \psi_{\mathrm{proto}} \rangle .
+\end{equation}
+In a substrate eigenbasis this reduces to $\epsilon_\psi=\sum_{i\in s}|\langle \phi_i|\psi_{\mathrm{proto}}\rangle|^2$. A dimensional illustration of how small overlap coefficients ($\epsilon \ll 1$) naturally generate hierarchically small masses in weak-mixing scenarios is provided in Supplementary Section~5.
+
+Empirically, long-lived particles occupy the underdamped basin $\chi \ll 1$, while short-lived resonances cluster near $\chi \approx 1$. This distribution is shown in Figure~\ref{fig:lineage}; the numerical compilation and conventions used in the classification are provided in Supplementary Table~S1.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{Fig3_StabilityArch.png}
+\caption{\textbf{Exceptional-Point Stability Architecture: cross-scale classification.} Physical systems plotted as damping scale $\log_{10}\Gamma$ versus characteristic frequency $\log_{10}\omega$ from cosmological to Planck scales. The solid magenta line marks the $\chi = \Gamma/(2\omega) = 1$ exceptional-point boundary; dashed lines show constant-$\chi$ reference levels at $\chi = 0.01$, $0.1$, and $10$. For elementary particles, $\omega$ is identified with rest mass (natural units) and $\Gamma$ with the measured decay width \cite{pdg2022}. \textbf{Open markers} indicate vacuum-substrate anchors defined by the critical-damping condition $\Gamma = 2\omega$ ($\chi = 1$ by construction); these are theoretical reference points, not measured decay widths, and are excluded from statistical estimates. \textbf{Filled markers} represent empirical PDG data. Long-lived matter occupies the deep underdamped basin ($\chi \ll 1$, lower left); short-lived resonances and vacuum substrates cluster at the $\chi = 1$ boundary. Exact values and conventions in Supplementary Table~S1.}
+\label{fig:lineage}
+\end{figure}
+
+\paragraph{Null-model comparator.}
+For comparison, Monte Carlo null ensembles constructed from independent log-uniform $(\Omega,\Gamma)$ samples over the observed ranges produce substantially broader $\chi$ distributions than those shown here. This comparison is intended to illustrate structural contrast rather than to assert formal statistical significance.
+
+When a dominant substrate satisfies $\chi \approx 1$, any emergent mode with nonzero overlap carries a corresponding near-critical contribution. In the dominance limit, $|c_s|^2 \gg |c_{k\neq s}|^2$, the emergent ratio approaches $\chi_\psi \to \chi_s$. Within the present stability architecture, emergent parameters are defined through projection onto substrate modes, thereby constraining the admissible parameter space relative to arbitrary independent tuning. A formal treatment of this relation is provided in Ref.~\cite{christensen_gaps}.
+
+\subsection{Structural Role of Gauge Couplings}
+Within the stability architecture, gauge couplings are classified as \emph{substrate-ratio parameters}. In representative open-field settings, interaction-induced broadening rates admit scaling of the form $\Gamma_i \propto g_i^2\,\Omega_i$ up to model-dependent phase-space factors and kinematic thresholds, where $\Omega_i$ denotes a characteristic sector frequency at the scale of interest. The effective stability index $\chi_i = \Gamma_i/(2\Omega_i)$ therefore depends directly on the gauge coupling.
+
+The persistence of a gauge sector as a coherent substrate is consistent with operation within the near-critical window $\chi_i \approx 1$. This condition constrains $g_i^2$ to values that maintain spectral balance between interaction-induced damping and coherent propagation across renormalization-group flow. In this sense, gauge couplings can be interpreted as ratios constrained by stability consistency within the present framework, rather than as completely unconstrained free inputs.
+
+The research does not claim a parameter-free derivation of the numerical values of $(g_1, g_2, g_3)$. Instead, it provides a stability-based classification: the couplings control the ratio between interaction-induced broadening and coherent sector frequency, and therefore determine whether a sector admits near-critical operation in the sense of $\chi_i = \Gamma_i/(2\Omega_i)$. Any stronger claim requires specifying $(\Omega_i, \Gamma_i)$ operationally and demonstrating the mapping to the measured renormalized couplings at a fixed reference scale.
+
+% ============================================================
+\section{Experimental and Observational Tests}
+% ============================================================
+
+Having established the structural role of the $\chi=1$ boundary across quantum, field-theoretic, and cosmological dynamics, this section outlines concrete experimental and observational tests capable of confirming or falsifying the stability architecture.
+
+The structural identity of the $\chi=1$ boundary yields falsifiable predictions across accessible energy scales. Each test below specifies an observable, a measurable threshold, and the conditions under which this framework would be challenged.
+
+\subsection{Cosmological Synchronization (DESI \& Euclid)}
+In flat $\Lambda$CDM, the onset of cosmic acceleration ($q=0$) and the critical damping of structure growth ($\chi_{\delta}=1$) occur at the same transition redshift $z_t$. Extensions such as curvature or dynamical dark energy ($w(z)\neq -1$) generically break this synchronization, producing an offset $\Delta z = z_{q=0} - z_{\chi=1}$.
+\begin{itemize}
+    \item \textbf{Observable:} The redshift difference $\Delta z$ between the kinematic transition ($q=0$) inferred from supernovae/BAO and the structural transition ($\chi_{\delta}=1$) inferred from growth-rate measurements ($f\sigma_8$).
+    \item \textbf{Sensitivity Requirement:} Upcoming surveys (DESI, Euclid, Rubin) are expected to constrain $z_t \approx 0.6$ with precision $\sigma_z < 0.05$ \cite{desi2024}. A statistically significant offset $|\Delta z| > 3\sigma_z$ that cannot be attributed to curvature or $w(z)$ evolution would challenge the structural identity.
+\end{itemize}
+
+\subsection{Quantum Spectral Merger (Circuit QED)}
+The transition from underdamped oscillation to overdamped decay at $\chi=1$ predicts a unique spectral signature: the coalescence of eigenfrequencies into a second-order exceptional point (EP2). This can be probed in superconducting qubit--cavity systems with tunable coupling $g$ \cite{blais2021,aspelmeyer2014}.
+\begin{itemize}
+    \item \textbf{Protocol:} A transmon qubit ($\omega_q/2\pi \approx 5$ GHz) coupled to a dissipative cavity ($\kappa/2\pi \approx 1$ MHz) is tuned through the exceptional point by varying the Purcell decay rate $\gamma_P = \kappa g^2/\Delta^2$.
+    \item \textbf{Signature:} As $\chi$ is scanned through $\{0.8,0.9,1.0,1.1\}$, the qubit population $P_1(t)$ must transition from oscillatory decay $e^{-\gamma t/2}\cos(\omega_a t)$ to the EP2 kernel $t e^{-\omega t}$ at the critical point, accompanied by spectral doublet merger $\omega_{\pm}\to\omega_0$.
+    \item \textbf{Sensitivity Requirement:} Time-domain sampling with $\delta t \le 10$ ns over a $10\,\mu$s window is required to resolve the critical power-law tail. A failure to observe spectral coalescence within the expected window $0.95 < \chi < 1.05$ would challenge the existence of the EP2 boundary in open quantum dynamics. Detailed experimental parameters and statistical hypothesis-testing frameworks are provided in Supplementary Section~9.
+\end{itemize}
+
+\subsection{Finite-Temperature QCD Coherence (Lattice)}
+If the QCD substrate participates in near-critical stability organization, lattice determinations of finite-temperature spectral functions should reveal a scalar ($0^{++}$) channel with damping ratio $\chi \equiv \Gamma/(2\Omega)$ approaching unity in the vicinity of the confinement transition.
+\begin{itemize}
+    \item \textbf{Observable:} The thermal pole or peak location $\Omega(T)$ and width $\Gamma(T)$ extracted from spectral reconstructions in the $0^{++}$ channel.
+    \item \textbf{Signature:} Existence of a temperature band near the transition where $0.8 \lesssim \chi(T) \lesssim 1.0$.
+    \item \textbf{Challenge condition:} Absence of any near-critical window in all plausible reconstruction methods would weaken the substrate-coherence interpretation.
+\end{itemize}
+
+\subsection{Neutron Star Ringdown (Gravitational Waves)}
+For neutron-star $f$-modes, the damping time $\tau$ and oscillation frequency $f$ define a dimensionless stability index $\chi_{\mathrm{NS}} = (2\pi f\tau)^{-1}$. As compact objects approach the TOV limit, the mode trajectory is predicted to approach the structural boundary $\chi_{\mathrm{NS}} \approx 1$.
+\begin{itemize}
+    \item \textbf{Test:} Third-generation gravitational-wave detectors (Cosmic Explorer, Einstein Telescope) should observe that remnant objects populate the region $\chi_{\mathrm{NS}} \le 1$ \cite{abbott2020,cardoso2016}; a statistically significant population with $\chi_{\mathrm{NS}} > 1$ would contradict the stability-boundary interpretation.
+\end{itemize}
+
+% ============================================================
+\section{Conclusion}
+% ============================================================
+
+A single dimensionless ratio, $\chi=\gamma/(2\omega)$, defines a stability architecture across quantum, field-theoretic, and cosmological dynamics. The critical boundary $\chi=1$ marks a non-Hermitian exceptional point that coincides exactly with the onset of cosmic acceleration via the identity $\chi_\delta = 1 \Longleftrightarrow q = 0$.
+Substrate inheritance constrains emergent parameters without invoking phenomenological tuning, and observed particle hierarchies are consistent with stability-based classification.
+
+\paragraph{Interpretation.}
+Any apparent preference for $\chi\approx 1$ is interpreted as survivorship under stability constraints rather than as an optimization principle imposed by nature. In this view, the critical boundary functions as a separatrix that organizes which structures can persist, not as a target that dynamics must seek. Together, these results identify $\chi$ as a common stability index linking quantum, field-theoretic, and cosmological dissipative dynamics.
+
+\paragraph{Falsifiability.}
+The framework yields several independent tests.
+(i) In flat $\Lambda$CDM, the transitions $\chi_\delta=1$ and $q=0$ must coincide; any observed offset would falsify the structural identity.
+(ii) Finite-temperature lattice QCD must exhibit a $0^{++}$ mode with $\chi\approx 1$ near the confinement transition.
+(iii) Quantum platforms with tunable $\gamma/\omega$ must display spectral-peak merger and the EP2 kernel at $\chi=1$.
+(iv) Neutron-star oscillation modes should approach $\chi_{\mathrm{NS}}\to 1$ near the TOV limit.
+These tests collectively determine whether the stability architecture described here is realized in nature.
+
+% ============================================================
+\section*{Methods}
+% ============================================================
+
+\paragraph{Settling-time simulation.}
+Numerical settling times were computed by integrating the second-order damped oscillator
+\begin{equation}
+\ddot{x} + \gamma\dot{x} + \omega^2 x = 0
+\end{equation}
+via \texttt{scipy.integrate.solve\_ivp} (Python 3.9+, RK45 adaptive time stepping, absolute and relative tolerances $10^{-9}$, maximum step $\Delta t = 0.01$) with unit frequency $\omega=1$, initial conditions $(x_0,\dot{x}_0)=(1,0)$, and a damping grid of 120 uniformly spaced values $\chi \in [0.10, 3.0]$, corresponding to $\gamma \in [0.20, 6.0]$. Settling time $T_s$ was defined as the first time at which $|x(t')|\leq 10^{-3}$ for all $t'\geq t$. Results are archived in \texttt{symc\_settling\_times.csv} at Zenodo (\url{https://doi.org/10.5281/zenodo.17528111}).
+
+\paragraph{Statistical null tests.}
+Cross-scale compression of $\chi$ values in Supplementary Table~S1 was evaluated against three null models: (N1) permutation of $\chi$ relative to mass; (N2) broad log-uniform sampling across the full accessible $\chi$ range; (N3) mass-trend-plus-Gaussian-scatter. Each null was evaluated at $n=10{,}000$ Monte Carlo trials with fixed random seed (seed~$=7$) for reproducibility. Upper-bound entries (electron, proton) were treated as right-censored via log-uniform imputation below the reported limit, repeated over 200 imputations. Primary test statistic was residual standard deviation $T_\mathrm{res}$ after removing a linear mass trend in log space. Analysis was restricted to the S1 empirical subset ($n=20$) as the primary result. Source code is archived at Zenodo (\url{https://doi.org/10.5281/zenodo.17528111}).
+
+\paragraph{Cosmological calculations.}
+The identity $\chi_\delta=1\Longleftrightarrow q=0$ was derived analytically from the flat-$\Lambda$CDM Friedmann and growth equations (Section~3 and Supplementary Section~1.3). Figure~2(a) plots $q(z)$ and $\chi_\delta(z)$ computed directly from these equations; no fitting functions are used. Numerical verification used concordance parameters $\Omega_m=0.315$, $\Omega_\Lambda=0.685$, $H_0=67.4\ \mathrm{km\,s^{-1}\,Mpc^{-1}}$ \cite{planck2020}. Sensitivity of the synchronization redshift to $w$CDM departures was computed over a grid of $(w_0,w_a)$ values; results are tabulated in \texttt{phase1\_deltaa\_grid.csv} and \texttt{phase1\_validity\_table.csv}, provided in the Supplementary Materials.
+
+\paragraph{Particle data compilation.}
+Mass and width values in Supplementary Table~S1 were drawn from PDG~2022 \cite{pdg2022}. Vacuum-scale entries (QCD, Electroweak, GUT, Planck, Dark Energy) are defined anchors satisfying $\chi=1$ by construction ($\Gamma = 2\omega$) and are plotted as open markers in Figure~3 to distinguish them from empirical data; they are excluded from statistical compression estimates. Quark widths represent the hadronization scale $\sim\Lambda_\mathrm{QCD}$ and are approximate. Electron and proton widths are PDG-derived experimental upper bounds. Neutrino entries report mass scales only; coherence constraints imply $\chi_k\ll 1$ without a specific $\Gamma$. Figure~3 is generated from a canonical data file (\texttt{stability\_table\_S1.csv}) using a reproducible Python script (\texttt{figure3\_clean.py}); both are archived at Zenodo (\url{https://doi.org/10.5281/zenodo.17528111}). Full conventions and provenance are given in Supplementary Table~S1.
+
+% ============================================================
+\section*{Author Contributions}
+% ============================================================
+
+N.C. conceived the theoretical framework, performed the derivations, conducted the analysis, and prepared the manuscript and supplementary materials.
+
+% ============================================================
+\section*{Acknowledgments}
+% ============================================================
+
+The author acknowledges the broader scientific community for prior advances that made this work possible.
+
+% ============================================================
+\section*{Funding}
+% ============================================================
+
+This research received no external funding.
+
+% ============================================================
+\section*{Competing Interests}
+% ============================================================
+
+The author declares no competing interests.
+
+% ============================================================
+\section*{Data availability}
+% ============================================================
+
+The settling-time simulation data supporting this study (\texttt{symc\_settling\_times.csv}), 
+cosmological sensitivity grids (\texttt{phase1\_deltaa\_grid.csv}, 
+\texttt{phase1\_validity\_table.csv}), canonical particle data file (\texttt{stability\_table\_S1.csv}),
+and complete source code (\texttt{figure3\_clean.py}, \texttt{chi\_null\_tests.py}) are available 
+at Zenodo (\url{https://doi.org/10.5281/zenodo.17528111}) and GitHub 
+(\url{https://github.com/SymCUniverse/Foundations}). 
+All particle physics values are drawn from PDG 2022~\cite{pdg2022}.
+
+% ============================================================
+\section*{AI Writing Assistance}
+% ============================================================
+
+During the preparation of this work, the author used Claude (Anthropic), GPT-4 
+(OpenAI), DeepSeek, Gemini (Google), and Microsoft Copilot in a systematic 
+convergence methodology to cross-check mathematical derivations, test theoretical 
+claims, and refine hypothesis formulation through iterative dialogue. Multiple AI 
+systems were queried independently on identical problems to identify consensus 
+solutions and flag inconsistencies requiring further investigation. The author 
+orchestrated all queries, evaluated all outputs critically, and edited all content 
+for accuracy and clarity. All data analysis, scientific conclusions, theoretical 
+framework development, and final manuscript content are the original intellectual 
+contribution of the author. The author takes full responsibility for the accuracy 
+and integrity of this work.
+
+% ============================================================
+\begin{thebibliography}{99}
+% ============================================================
+
+\bibitem{bender2007}
+Bender, C. M. Making sense of non-Hermitian Hamiltonians. \textit{Rep. Prog. Phys.} \textbf{70}, 947--1018 (2007).
+
+\bibitem{aspelmeyer2014}
+Aspelmeyer, M., Kippenberg, T. J. \& Marquardt, F. Cavity optomechanics. \textit{Rev. Mod. Phys.} \textbf{86}, 1391--1452 (2014).
+
+\bibitem{blais2021}
+Blais, A. et al. Circuit quantum electrodynamics. \textit{Rev. Mod. Phys.} \textbf{93}, 025005 (2021).
+
+\bibitem{breuer2002}
+Breuer, H.-P. \& Petruccione, F. \textit{The Theory of Open Quantum Systems} (Oxford University Press, 2002).
+
+\bibitem{cardoso2016}
+Cardoso, V., Franzin, E. \& Pani, P. Is the gravitational-wave ringdown a probe of the event horizon? \textit{Phys. Rev. Lett.} \textbf{116}, 171101 (2016).
+
+\bibitem{carmichael1999}
+Carmichael, H. J. \textit{Statistical Methods in Quantum Optics 1} (Springer, 1999).
+
+\bibitem{clerk2010}
+Clerk, A. A. et al. Introduction to quantum noise, measurement, and amplification. \textit{Rev. Mod. Phys.} \textbf{82}, 1155--1208 (2010).
+
+\bibitem{desi2024}
+DESI Collaboration. DESI 2024 VI: cosmological constraints from BAO. Preprint at \url{https://arxiv.org/abs/2404.03002} (2024).
+
+\bibitem{dodelson2003}
+Dodelson, S. \textit{Modern Cosmology} (Academic Press, 2003).
+
+\bibitem{gorini1976}
+Gorini, V., Kossakowski, A. \& Sudarshan, E. C. G. Completely positive dynamical semigroups of N-level systems. \textit{J. Math. Phys.} \textbf{17}, 821--825 (1976).
+
+\bibitem{heiss2012}
+Heiss, W. D. The physics of exceptional points. \textit{J. Phys. A} \textbf{45}, 444016 (2012).
+
+\bibitem{kato1995}
+Kato, T. \textit{Perturbation Theory for Linear Operators} (Springer, 1995).
+
+\bibitem{bergholtz2021}
+Bergholtz, E. J., Budich, J. C. \& Kunst, F. K. Exceptional topology of non-Hermitian systems. \textit{Rev. Mod. Phys.} \textbf{93}, 015005 (2021).
+
+\bibitem{lindblad1976}
+Lindblad, G. On the generators of quantum dynamical semigroups. \textit{Commun. Math. Phys.} \textbf{48}, 119--130 (1976).
+
+\bibitem{ogata2010}
+Ogata, K. \textit{Modern Control Engineering} 5th edn (Prentice Hall, 2010).
+
+\bibitem{pdg2022}
+Particle Data Group. Review of particle physics. \textit{Prog. Theor. Exp. Phys.} \textbf{2022}, 083C01 (2022).
+
+\bibitem{peebles1993}
+Peebles, P. J. E. \textit{Principles of Physical Cosmology} (Princeton University Press, 1993).
+
+\bibitem{perlmutter1999}
+Perlmutter, S. et al. Measurements of $\Omega$ and $\Lambda$ from 42 high-redshift supernovae. \textit{Astrophys. J.} \textbf{517}, 565--586 (1999).
+
+\bibitem{planck2020}
+Planck Collaboration. Planck 2018 results. VI. Cosmological parameters. \textit{Astron. Astrophys.} \textbf{641}, A6 (2020).
+
+\bibitem{riess1998}
+Riess, A. G. et al. Observational evidence from supernovae for an accelerating universe. \textit{Astron. J.} \textbf{116}, 1009--1038 (1998).
+
+\bibitem{abbott2020}
+Abbott, B. P. et al. GW190814: gravitational waves from the coalescence of a 23 solar mass black hole with a 2.6 solar mass compact object. \textit{Astrophys. J. Lett.} \textbf{896}, L44 (2020).
+
+\bibitem{wilson1974}
+Wilson, K. G. \& Kogut, J. The renormalization group and the $\epsilon$ expansion. \textit{Phys. Rep.} \textbf{12}, 75--199 (1974).
+
+\bibitem{christensen_qft}
+Christensen, N. Structural constraints from critical damping in open quantum field theories: implications for QCD substrate inheritance and phenomenological extensions. Zenodo \url{https://doi.org/10.5281/zenodo.17437688} (2026).
+
+\bibitem{christensen_gaps}
+Christensen, N. Closing critical gaps: physical inheritance from stabilized substrates in dynamical systems. Zenodo \url{https://doi.org/10.5281/zenodo.17428940} (2026).
+
+\end{thebibliography}
+
+\end{document}
