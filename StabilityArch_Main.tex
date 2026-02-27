@@ -36,11 +36,11 @@ Many physical theories are structured around boundary conditions and limiting pr
 \begin{equation}\label{eq:chi_def}
 \chi \equiv \frac{\gamma}{2\omega}
 \end{equation}
-plays an analogous role in dynamical stability. This stability-boundary formalism is developed in Ref.~\cite{christensen_gaps} and identifies $\chi=1$ as a structural separatrix in dissipative dynamics.
+plays an analogous role in dynamical stability. Here $\omega$ denotes the positive characteristic frequency scale of the mode. This stability-boundary formalism is developed in Ref.~\cite{christensen_gaps} and identifies $\chi=1$ as a structural separatrix in dissipative dynamics. Throughout, $\omega$ is taken as a positive frequency scale (so $|\omega|=\omega$).
 
 At $\chi = 1$, the generator of dynamics becomes defective and the impulse response transitions to
 \begin{equation}\label{eq:ep_kernel}
-h(t) = t e^{-|\omega|t},
+h(t) = t e^{-\omega t},
 \end{equation}
 defining a second-order non-Hermitian exceptional point (EP2) \cite{bender2007,heiss2012,kato1995,bergholtz2021}.
 
@@ -65,7 +65,7 @@ the characteristic discriminant
 \begin{equation}
 \Delta = \gamma^2 - 4\omega^2 = 4\omega^2(\chi^2 - 1)
 \end{equation}
-vanishes at $\chi = 1$, yielding coalesced roots $\lambda_\pm = -|\omega|$ and the EP2 impulse kernel \eqref{eq:ep_kernel} \cite{kato1995}.
+vanishes at $\chi = 1$, yielding coalesced roots $\lambda_\pm = -\omega$ and the EP2 impulse kernel \eqref{eq:ep_kernel} \cite{kato1995}.
 Such quadratic response structures appear directly in classical linear-response theory and in retarded propagators of dissipative quantum field theory \cite{breuer2002}. Lindblad-form Markovian dynamics can realize the same EP2 kernel in appropriate effective response channels; the mapping and its scope are given explicitly in Supplementary Section~1 \cite{lindblad1976,gorini1976}.
 
 An identical structure arises in dissipative quantum field theory. For a scalar mode with retarded propagator
@@ -76,7 +76,7 @@ the poles
 \begin{equation}
 \Omega_\pm = -\frac{i\gamma}{2} \pm \sqrt{\omega^2 - \frac{\gamma^2}{4}}
 \end{equation}
-coalesce at $\gamma = 2|\omega|$, reproducing the same EP2 kernel \cite{breuer2002,bergholtz2021}.
+coalesce at $\gamma = 2\omega$, reproducing the same EP2 kernel \cite{breuer2002,bergholtz2021}.
 
 The information-efficiency functional
 \begin{equation}
@@ -109,6 +109,12 @@ Linear density perturbations satisfy
 \chi_\delta = \frac{H}{\sqrt{4\pi G\rho_m}} .
 \end{equation}
 
+Substituting $4\pi G\rho_m = \tfrac{3}{2}H^2\Omega_m$ and cancelling $H$ exactly yields
+\begin{equation}
+\chi_\delta(z) = \sqrt{\frac{2}{3\,\Omega_m(z)}} ,
+\end{equation}
+a pure function of the evolving matter density parameter.
+
 In flat $\Lambda$CDM, the deceleration parameter
 \begin{equation}
 q = \frac{1}{2}\Omega_m - \Omega_\Lambda
@@ -122,15 +128,17 @@ implying the exact identity
 \chi_\delta = 1 \Longleftrightarrow q = 0 .
 \end{equation}
 
-This parameter-free identity links cosmic acceleration onset to critical damping of structure growth.
+Within spatially flat $\Lambda$CDM, this parameter-free identity links cosmic acceleration onset to critical damping of structure growth.
 
 \paragraph{Scope of the identity.}
-Equation~\eqref{eq:chi_q_identity} holds \emph{exactly} for spatially flat $\Lambda$CDM. In non-flat cosmologies or in $w$CDM with $w\neq -1$, the synchronization between the acceleration transition and the critical-damping crossing is no longer exact, but the stability crossing $\chi_\delta=1$ remains well-defined and shifts to a nearby redshift. This makes departures from $\Lambda$CDM testable as measurable offsets between the $q=0$ and $\chi_\delta=1$ transitions. Figure~\ref{fig:synchronization} demonstrates this synchronization.
+Equation~\eqref{eq:chi_q_identity} holds \emph{exactly} for spatially flat $\Lambda$CDM. In non-flat cosmologies or in $w$CDM with $w\neq -1$, the synchronization between the acceleration transition and the critical-damping crossing is no longer exact, but the stability crossing $\chi_\delta=1$ remains well-defined and shifts to a nearby redshift. This makes departures from $\Lambda$CDM testable as measurable offsets between the $q=0$ and $\chi_\delta=1$ transitions. Panel~(b) visualizes this shift explicitly in $(\chi_\delta,q)$ space for representative $w\neq -1$ trajectories, illustrating how the exact intersection becomes displaced away from $(1,0)$. Figure~\ref{fig:synchronization} demonstrates this synchronization.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{Fig3_StabilityArch.png}
-\caption{\textbf{Cosmological synchronization of critical damping and acceleration onset.} \textbf{(a)} Temporal evolution showing the deceleration parameter $q(z)$ (blue) and stability index $\chi_\delta(z)$ (magenta dashed) as functions of redshift, computed directly from the flat-$\Lambda$CDM Friedmann and growth equations with concordance parameters $\Omega_m=0.315$, $\Omega_\Lambda=0.685$ \cite{planck2020}; no fitting functions are used. Both curves cross at $z_t \approx 0.63$, where $q = 0$ and $\chi_\delta = 1$ simultaneously. \textbf{(b)} Phase-space trajectory in $(\Omega_m, \Omega_\Lambda)$ coordinates under concordance $\Lambda$CDM. Flow lines converge toward the critical point $\Omega_m = 2/3$, $\Omega_\Lambda = 1/3$ where the structural identity is satisfied; the star marks the present-day concordance values.}
+\includegraphics[width=\linewidth]{Fig2_Synchronization.png}
+\caption{\textbf{Cosmological synchronization of critical damping and acceleration onset.}
+\textbf{(a)} Temporal evolution showing the deceleration parameter $q(z)$ (blue) and stability index $\chi_\delta(z)$ (magenta dashed) as functions of redshift, computed directly from the flat-$\Lambda$CDM Friedmann and growth equations with concordance parameters $\Omega_m=0.315$, $\Omega_\Lambda=0.685$ \cite{planck2020}; no fitting functions are used. Both curves cross at $z_t \approx 0.63$, where $q = 0$ and $\chi_\delta = 1$ simultaneously.
+\textbf{(b)} Structural trajectory in $(\chi_\delta, q)$ space. The exact identity crossing $(\chi_\delta=1, q=0)$ is marked by a star. The solid curve shows the $\Lambda$CDM trajectory ($w=-1$), while dashed curves illustrate representative $w\neq -1$ models ($w=-0.8$, $w=-1.2$), which break exact synchronization and shift the crossing point. The vertical and horizontal reference lines mark the critical stability and acceleration boundaries.}
 \label{fig:synchronization}
 \end{figure}
 
@@ -254,7 +262,7 @@ Any apparent preference for $\chi\approx 1$ is interpreted as survivorship under
 
 \paragraph{Falsifiability.}
 The framework yields several independent tests.
-(i) In flat $\Lambda$CDM, the transitions $\chi_\delta=1$ and $q=0$ must coincide; any observed offset would falsify the structural identity.
+(i) In flat $\Lambda$CDM, the transitions $\chi_\delta=1$ and $q=0$ must coincide; any statistically significant displacement of the observed trajectory away from the structural intersection $(\chi_\delta=1,q=0)$ in $(\chi_\delta,q)$ space would falsify the exact synchronization predicted by flat $\Lambda$CDM.
 (ii) Finite-temperature lattice QCD must exhibit a $0^{++}$ mode with $\chi\approx 1$ near the confinement transition.
 (iii) Quantum platforms with tunable $\gamma/\omega$ must display spectral-peak merger and the EP2 kernel at $\chi=1$.
 (iv) Neutron-star oscillation modes should approach $\chi_{\mathrm{NS}}\to 1$ near the TOV limit.
@@ -275,7 +283,7 @@ via \texttt{scipy.integrate.solve\_ivp} (Python 3.9+, RK45 adaptive time steppin
 Cross-scale compression of $\chi$ values in Supplementary Table~S1 was evaluated against three null models: (N1) permutation of $\chi$ relative to mass; (N2) broad log-uniform sampling across the full accessible $\chi$ range; (N3) mass-trend-plus-Gaussian-scatter. Each null was evaluated at $n=10{,}000$ Monte Carlo trials with fixed random seed (seed~$=7$) for reproducibility. Upper-bound entries (electron, proton) were treated as right-censored via log-uniform imputation below the reported limit, repeated over 200 imputations. Primary test statistic was residual standard deviation $T_\mathrm{res}$ after removing a linear mass trend in log space. Analysis was restricted to the S1 empirical subset ($n=20$) as the primary result. Source code is archived at Zenodo (\url{https://doi.org/10.5281/zenodo.17528111}).
 
 \paragraph{Cosmological calculations.}
-The identity $\chi_\delta=1\Longleftrightarrow q=0$ was derived analytically from the flat-$\Lambda$CDM Friedmann and growth equations (Section~3 and Supplementary Section~1.3). Figure~2(a) plots $q(z)$ and $\chi_\delta(z)$ computed directly from these equations; no fitting functions are used. Numerical verification used concordance parameters $\Omega_m=0.315$, $\Omega_\Lambda=0.685$, $H_0=67.4\ \mathrm{km\,s^{-1}\,Mpc^{-1}}$ \cite{planck2020}. Sensitivity of the synchronization redshift to $w$CDM departures was computed over a grid of $(w_0,w_a)$ values; results are tabulated in \texttt{phase1\_deltaa\_grid.csv} and \texttt{phase1\_validity\_table.csv}, provided in the Supplementary Materials.
+The identity $\chi_\delta=1\Longleftrightarrow q=0$ was derived analytically from the flat-$\Lambda$CDM Friedmann and growth equations (Section~3 and Supplementary Section~1.3). Figure~2(a) plots $q(z)$ and $\chi_\delta(z)$ computed directly from these equations; no fitting functions are used. Figure~2(b) plots the resulting dynamical trajectory in $(\chi_\delta,q)$ space for $\Lambda$CDM and representative $w$CDM models. Numerical verification used concordance parameters $\Omega_m=0.315$, $\Omega_\Lambda=0.685$, $H_0=67.4\ \mathrm{km\,s^{-1}\,Mpc^{-1}}$ \cite{planck2020}. Sensitivity of the synchronization redshift to $w$CDM departures was computed over a grid of $(w_0,w_a)$ values; results are tabulated in \texttt{phase1\_deltaa\_grid.csv} and \texttt{phase1\_validity\_table.csv}, provided in the Supplementary Materials.
 
 \paragraph{Particle data compilation.}
 Mass and width values in Supplementary Table~S1 were drawn from PDG~2022 \cite{pdg2022}. Vacuum-scale entries (QCD, Electroweak, GUT, Planck, Dark Energy) are defined anchors satisfying $\chi=1$ by construction ($\Gamma = 2\omega$) and are plotted as open markers in Figure~3 to distinguish them from empirical data; they are excluded from statistical compression estimates. Quark widths represent the hadronization scale $\sim\Lambda_\mathrm{QCD}$ and are approximate. Electron and proton widths are PDG-derived experimental upper bounds. Neutrino entries report mass scales only; coherence constraints imply $\chi_k\ll 1$ without a specific $\Gamma$. Figure~3 is generated from a canonical data file (\texttt{stability\_table\_S1.csv}) using a reproducible Python script (\texttt{figure3\_clean.py}); both are archived at Zenodo (\url{https://doi.org/10.5281/zenodo.17528111}). Full conventions and provenance are given in Supplementary Table~S1.
