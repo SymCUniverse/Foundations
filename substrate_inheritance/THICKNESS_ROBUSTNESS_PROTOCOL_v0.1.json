@@ -1,0 +1,95 @@
+{
+  "schema": "substrate-inheritance-thickness-robustness-v0.1-candidate",
+  "status": "NON_AUTHORITATIVE_DEVELOPMENT_FROZEN_BEFORE_CO_CHILD_CARRIER_RESULT",
+  "base_program": "frozen substrate-inheritance v0.2",
+  "si_next_contract": "substrate_inheritance/SI_NEXT_CANDIDATE_CONTRACT_v0.3.json",
+  "purpose": "Treat finite slab depth as an explicit parent-model uncertainty and robustness axis. Determine whether SI-relevant parent observables and carrier structures are stable across independently admitted finite-slab approximations without converting a failed absolute clean-surface convergence gate into a pass.",
+  "science_firewall": {
+    "v0_2_promotion_gates_changed": false,
+    "v0_2_physical_thresholds_changed": false,
+    "co_cu111_v0_2_scoring_changed": false,
+    "absolute_clean_surface_hold_may_be_reclassified": false,
+    "child_result_may_select_parent_thickness": false,
+    "child_result_may_select_projection_or_frequency_window": false,
+    "post_target_finite_size_model_selection_allowed": false,
+    "physical_threshold_introduced": false,
+    "physical_inheritance_label_assigned": false
+  },
+  "source_context": {
+    "system": "CO/Cu(111)",
+    "chemistry_repository": "SymC-Universe/Chemistry",
+    "l15_case_id": "L15-V32-K28-extension-audit",
+    "l17_case_id": "L17-V36-K32-extension-audit",
+    "l15_mechanical_pass": true,
+    "l17_mechanical_pass": true,
+    "l17_original_absolute_surface_gate_pass": false,
+    "observed_l15_l17_surface_excess_delta_ev_per_surface_atom": 0.001106435876863543,
+    "source_rule": "These values establish the finite-slab uncertainty problem only. They do not calibrate an SI promotion threshold."
+  },
+  "parent_ensemble": {
+    "members": [15, 17],
+    "semantics": "two independently characterized finite approximations to one physical parent substrate",
+    "neither_member_declared_semi_infinite_truth": true,
+    "winner_selection_forbidden": "Do not choose L15 or L17 because one gives a more favorable child correspondence or inheritance result.",
+    "matched_comparison_requirement": "Any thickness-robustness observable used for SI must be evaluated under computationally matched conditions sufficient to isolate slab-depth dependence. If the original source calculations co-vary vacuum, reciprocal sampling, supercell, or other numerical settings, recompute the compared observable under a matched protocol or report the thickness effect as confounded/nonidentifiable."
+  },
+  "perspective_rules": {
+    "scalar": {
+      "absolute_surface_excess": "Retain the Chemistry absolute convergence HOLD and its numerical discrepancy in U_scalar. A scalar HOLD does not automatically erase separately demonstrated modal or conglomeration robustness.",
+      "other_scalars": "Report finite-thickness spread continuously with provenance. No scalar may borrow a pass threshold from another view."
+    },
+    "modal": {
+      "required_geometry": "Compare only prospectively defined shared physical degrees of freedom, preferably nested near-surface depth projections, with common mass normalization.",
+      "full_vector_matching_across_different_dimensions_forbidden": true,
+      "primary_objects": [
+        "shared-region mass-weighted Hessian or dynamical operator",
+        "surface-localized invariant subspace/projector",
+        "principal-angle or projector-overlap structure",
+        "mode participation and localization depth"
+      ],
+      "degeneracy_rule": "Use invariant subspaces/projectors for thickness-induced splitting, merging, crowding, or basis rotation rather than forcing one-to-one eigenvector identity."
+    },
+    "conglomeration": {
+      "primary_objects": [
+        "projected surface resolvent or Green function",
+        "substrate self-energy or embedding contribution when independently derived",
+        "depth-resolved participation/coupling structure",
+        "parent-to-adsorbate coupling block once the child protocol is independently frozen"
+      ],
+      "rule": "A downstream relative-energy or coupling observable may be adequate even while an unrelated absolute surface scalar remains unconverged, but the scope of that adequacy must be stated exactly."
+    },
+    "relationship_R": "Report whether scalar, modal, and conglomeration thickness responses agree or disagree. Do not collapse them to one master slab score.",
+    "uncertainty_U": "Finite-thickness disagreement is propagated as an explicit uncertainty/refusal contribution. Precision in one view cannot erase thickness sensitivity in another required view."
+  },
+  "candidate_continuous_diagnostics": {
+    "projected_operator_change": "delta_D = ||P D_17 P^T - P D_15 P^T|| / ||P D_17 P^T||, with norm, P, coordinate map, and mass metric frozen before child carrier inspection.",
+    "subspace_change": "Compare Pi_15 and Pi_17 using principal angles/projector norms over a parent-only, prospectively defined carrier set or frequency window.",
+    "projected_resolvent_change": "Compare G_15(omega)=P[(omega+i eta)^2 M-D_15]^{-1}P^T and G_17(omega) under a parent-only frozen omega window and eta convention.",
+    "depth_profile": "Repeat shared-region diagnostics over a nested family of prospectively declared surface-depth projections to determine whether the relevant parent structure is localized or remains thickness-sensitive.",
+    "threshold_policy": "Report these continuously with numerical uncertainty. This candidate protocol introduces no physical support/pass threshold."
+  },
+  "child_prediction_rule": {
+    "when_available": "After the CO/Cu child governing object and parent-child mapping are independently frozen, generate the same prospective child prediction from each admissible parent-ensemble member.",
+    "robust_pattern": "If L15- and L17-based predictions agree within propagated thickness/numerical uncertainty and the independently computed child is compatible with both while modal-scramble, coupling-rewire, and zero-coupling controls lose the correspondence, report thickness-robust supporting evidence without changing v0.2 promotion semantics.",
+    "sensitive_pattern": "If the inheritance-relevant correspondence, prediction, or evidence classification materially depends on choosing L15 versus L17, report THICKNESS_SENSITIVE or UNRESOLVED rather than selecting the favorable thickness.",
+    "prediction_interval_semantics": "An ensemble envelope is a finite-parent-model uncertainty region, not a probability distribution unless an independent statistical model licenses that interpretation."
+  },
+  "finite_size_correction_rule": {
+    "separate_from_si_parent_robustness": true,
+    "two_point_asymptotic_extrapolation_sufficient": false,
+    "reason": "Metal slabs can exhibit quantum-size oscillations and absolute surface-energy drift can reflect slab/bulk-reference inconsistency. A monotone decay law must not be inferred from L15 and L17 alone.",
+    "slab_consistent_surface_energy_methods_may_be_investigated": true,
+    "promotion_requirement": "Any finite-size correction or extrapolation model selected after L17 is known must be validated on a prospectively withheld future rung or an independent external system before it is used to promote a physical convergence claim."
+  },
+  "refusal_states": [
+    "THICKNESS_SENSITIVE",
+    "MATCHED_PARENT_COMPARISON_NOT_AVAILABLE",
+    "FINITE_SIZE_CONFOUNDED",
+    "FINITE_SIZE_NONIDENTIFIABLE",
+    "SUBSPACE_ONLY",
+    "PARENT_ENSEMBLE_PREDICTION_DISAGREEMENT",
+    "CHILD_RESULT_USED_TO_SELECT_PARENT_MODEL"
+  ],
+  "current_scope": "software/method architecture only until provenance-complete matched L15/L17 SI-relevant parent objects exist",
+  "physical_inheritance_claim": false
+}
