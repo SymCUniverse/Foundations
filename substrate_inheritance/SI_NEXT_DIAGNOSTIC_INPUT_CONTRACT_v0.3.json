@@ -1,0 +1,181 @@
+{
+  "schema": "substrate-inheritance-si-next-diagnostic-input-v0.3-candidate",
+  "status": "NON_AUTHORITATIVE_CANDIDATE_NOT_FROZEN_FOR_PHYSICAL_PROMOTION",
+  "base_input_contract": "substrate_inheritance/REAL_SYSTEM_INPUT_SCHEMA_v0.2.json",
+  "base_correspondence_protocol": "substrate_inheritance/CORRESPONDENCE_PROTOCOL_v0.2.json",
+  "purpose": "Define provenance-complete inputs for SI-next relationship, uncertainty, lineage, and multi-parent diagnostics without modifying or re-scoring any physical result already frozen under v0.2.",
+  "required_top_level_fields": [
+    "schema",
+    "status",
+    "diagnostic_id",
+    "base_v0_2_record_refs",
+    "relationship_R",
+    "uncertainty_U",
+    "lineage",
+    "multi_parent",
+    "provenance",
+    "science_firewall"
+  ],
+  "base_v0_2_record_ref_required_fields": [
+    "record_id",
+    "system_id",
+    "input_record_sha256",
+    "source_repository",
+    "source_ref",
+    "source_commit"
+  ],
+  "base_record_rule": "Every SI-next record reference must identify an independently provenance-complete v0.2 input record by canonical SHA-256. SI-next does not replace v0.2 ingestion.",
+  "relationship_R": {
+    "required_fields": [
+      "master_score_computed",
+      "physical_threshold_applied",
+      "views"
+    ],
+    "required_views": [
+      "scalar",
+      "modal",
+      "conglomeration"
+    ],
+    "allowed_view_states": [
+      "SUPPORTED",
+      "DISRUPTED",
+      "NONIDENTIFIABLE",
+      "NOT_MEASURED"
+    ],
+    "required_per_view_fields": [
+      "state",
+      "decision_basis",
+      "source_artifact_sha256"
+    ],
+    "rules": [
+      "All three views remain separately reported.",
+      "master_score_computed must be false.",
+      "physical_threshold_applied must be false.",
+      "If any required view is NONIDENTIFIABLE or NOT_MEASURED, the cross-view relationship remains unresolved.",
+      "The contract does not define a new physical support threshold."
+    ]
+  },
+  "uncertainty_U": {
+    "required_primary_views": [
+      "scalar",
+      "modal",
+      "conglomeration"
+    ],
+    "allowed_views": [
+      "scalar",
+      "modal",
+      "conglomeration",
+      "relationship",
+      "lineage",
+      "multi_parent"
+    ],
+    "allowed_statuses": [
+      "BOUNDED",
+      "UNRESOLVED",
+      "NOT_AVAILABLE"
+    ],
+    "required_entry_fields": [
+      "view",
+      "status",
+      "method",
+      "source_artifact_sha256"
+    ],
+    "rule": "Scalar, modal, and conglomeration uncertainty must each be explicitly recorded, including explicit UNRESOLVED or NOT_AVAILABLE states. Uncertainty and refusal states propagate forward. Precision in one view cannot erase unresolved uncertainty in another required view."
+  },
+  "lineage": {
+    "required_fields": [
+      "enabled",
+      "relative_flow_semantics",
+      "relative_flow_is_probability",
+      "relative_flow_is_causal_fraction",
+      "relative_flow_is_inheritance_percentage",
+      "relative_flow_is_promotion_score",
+      "transitions"
+    ],
+    "required_relative_flow_semantics": "descriptive_relative_correspondence_only",
+    "required_transition_fields": [
+      "transition_id",
+      "parent_record_sha256",
+      "child_record_sha256",
+      "correspondence_artifact_sha256",
+      "uncertainty_artifact_sha256",
+      "identifiability_requested",
+      "mapping_frozen_before_target_carrier_inspection",
+      "target_kinetics_used_to_choose_mapping",
+      "chi_used_to_choose_mapping"
+    ],
+    "identifiability_rule": "A unique dominant correspondence is not sufficient for identifiability. If identifiability_requested is true, an uncertainty artifact is mandatory. The downstream diagnostic may call a step identifiable only after uncertainty-resolved dominance or nonoverlapping uncertainty intervals under a method fixed before target interpretation.",
+    "flow_semantics": "Row-normalized lineage flow is descriptive relative correspondence only. It is not probability, causal fraction, inheritance percentage, or a promotion score.",
+    "threshold_policy": "No physical carrier-match cutoff is supplied by this contract."
+  },
+  "multi_parent": {
+    "required_fields": [
+      "enabled",
+      "exact_mobius_requested",
+      "subset_manifest_complete_for_exact_mobius",
+      "normalize_effects_to_unit_sum",
+      "protocol_frozen_before_target_interpretation",
+      "target_kinetics_used_to_choose_protocol",
+      "chi_used_to_choose_protocol",
+      "source_ids",
+      "subset_responses"
+    ],
+    "subset_response_required_fields": [
+      "active_source_ids",
+      "response_artifact_sha256",
+      "response_units",
+      "response_shape"
+    ],
+    "purpose": "Prepare source-specific and interaction-specific counterfactual diagnostics when multiple candidate parents are independently defined.",
+    "source_id_rule": "Every source_id must reference a declared base_v0_2_record_refs.record_id.",
+    "exact_mobius_rule": "Exact subset Mobius decomposition is admissible only when every one of the 2^n source subsets, including the empty subset and full set, has a provenance-complete response under one frozen protocol, with common units and response shape.",
+    "default_exhaustive_source_limit": 10,
+    "source_limit_role": "computational complexity guard only, not a physical threshold",
+    "normalization_policy": "normalize_effects_to_unit_sum must be false. Source effects and interactions must not be normalized to sum to one or 100 percent.",
+    "partial_subset_policy": "An incomplete subset manifest may support explicitly partial diagnostics only when exact_mobius_requested is false and subset_manifest_complete_for_exact_mobius truthfully records the manifest as incomplete."
+  },
+  "provenance": {
+    "required_fields": [
+      "source_repository",
+      "source_ref",
+      "source_commit",
+      "diagnostic_method_frozen_before_target_interpretation",
+      "post_target_threshold_fitting",
+      "post_target_mapping_fitting"
+    ],
+    "prospective_rule": "diagnostic_method_frozen_before_target_interpretation must be true; post_target_threshold_fitting and post_target_mapping_fitting must be false for this candidate contract."
+  },
+  "science_firewall": {
+    "v0_2_promotion_gates_changed": false,
+    "v0_2_physical_thresholds_changed": false,
+    "co_cu111_scoring_changed": false,
+    "retroactive_reinterpretation_allowed": false,
+    "candidate_output_may_override_v0_2_label": false,
+    "physical_promotion_semantics": false,
+    "physical_threshold_introduced": false,
+    "physical_promotion_label_assigned": false
+  },
+  "hard_refusals": [
+    "missing or invalid provenance hashes",
+    "missing base v0.2 record references",
+    "duplicate base record IDs or duplicate base record hashes",
+    "missing scalar, modal, or conglomeration relationship view",
+    "missing explicit scalar, modal, or conglomeration uncertainty status",
+    "cross-view master score requested or reported",
+    "physical threshold introduced by SI-next ingestion",
+    "SI-next used to override a v0.2 physical label or score",
+    "post-target mapping or threshold fitting presented as prospective",
+    "lineage identifiability requested without uncertainty provenance",
+    "lineage relative flow interpreted as probability, causal fraction, inheritance percentage, or promotion score",
+    "lineage transition references a parent or child outside the declared base v0.2 records",
+    "multi-parent source effects normalized to sum to one or 100 percent",
+    "duplicate or unknown source IDs in subset manifests",
+    "mixed response units or response shapes across a multi-parent manifest",
+    "subset completeness flag inconsistent with the actual subset manifest",
+    "incomplete 2^n subset manifest presented as exact Mobius decomposition",
+    "target kinetics or chi used to choose lineage mapping or source protocol"
+  ],
+  "physical_thresholds_frozen": false,
+  "real_system_result_established": false,
+  "physical_inheritance_claim": false
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Substrate Inheritance SI-next candidate architecture",
+  "version": "0.3-candidate",
+  "status": "NON_AUTHORITATIVE_DEVELOPMENT",
+  "base_contract": "frozen v0.2 substrate-inheritance program",
+  "science_firewall": {
+    "v0.2_promotion_gates_changed": false,
+    "v0.2_physical_thresholds_changed": false,
+    "co_cu111_scoring_changed": false,
+    "retroactive_reinterpretation_allowed": false,
+    "rule": "Any physical target already frozen under v0.2 remains judged only under its preregistered v0.2 contract. SI-next outputs are additional diagnostics and cannot rescue, promote, demote, or reinterpret that target."
+  },
+  "perspectives": {
+    "minimum_measurement_views": [
+      "scalar",
+      "modal",
+      "conglomeration"
+    ],
+    "new_peer_perspective_added": false,
+    "relationship_layer_R": "Reports agreement and disagreement among the three measurement views without collapsing them to a master score.",
+    "uncertainty_layer_U": "Propagates nonidentifiability and uncertainty from each required view without allowing precision in one view to erase uncertainty in another."
+  },
+  "relationship_states": [
+    "CROSS_VIEW_COHERENCE",
+    "SCALAR_ONLY",
+    "MODAL_ONLY",
+    "CONGLOMERATION_ONLY",
+    "SCALAR_MODAL_WITHOUT_CONGLOMERATION",
+    "SCALAR_CONGLOMERATION_WITHOUT_MODAL",
+    "MODAL_CONGLOMERATION_WITHOUT_SCALAR",
+    "NO_VIEW_SUPPORT",
+    "RELATIONSHIP_UNRESOLVED"
+  ],
+  "lineage": {
+    "purpose": "Track carrier correspondence across multiple parent-child transitions while retaining persistence, splitting, mixing, reconvergence, and extinction information.",
+    "promotion_semantics": false,
+    "tie_policy": "Exact top-score ties are NONIDENTIFIABLE and are not broken arbitrarily.",
+    "uncertainty_policy": "A unique dominant correspondence is not called identifiable unless a supplied uncertainty bound is smaller than its dominance margin. Interval-resolved identification additionally requires one candidate lower bound to exceed every competitor upper bound.",
+    "dispersion_diagnostics": [
+      "dominant relative fraction",
+      "Shannon entropy",
+      "normalized entropy",
+      "inverse-participation effective child count"
+    ],
+    "flow_policy": "Row-normalized multi-generation correspondence flow is descriptive only. It is not a probability, causal fraction, inheritance percentage, or promotion score.",
+    "threshold_policy": "No physical correspondence threshold is introduced by this candidate; uncertainty bounds must come from the relevant measurement or numerical analysis."
+  },
+  "multi_parent_attribution": {
+    "purpose": "Measure source-specific and interaction-specific response contributions when multiple candidate parents are present.",
+    "methods": [
+      "leave-one-source-out ablation",
+      "subset inclusion-exclusion main effects",
+      "pair interaction terms",
+      "higher-order residual retention",
+      "bounded exhaustive subset Mobius decomposition for exact higher-order interactions"
+    ],
+    "normalization_policy": "Source effects are not forced to sum to one because interactions may be real and non-additive.",
+    "exhaustive_decomposition_policy": "Exact Mobius decomposition evaluates every source subset and therefore uses an explicit default source-count guard of 10. The guard is computational, not physical.",
+    "promotion_semantics": false
+  },
+  "evidence_scope": "software, mathematical, and synthetic architecture validation only until independently frozen real-system inputs are available",
+  "physical_inheritance_claim": false
+}
